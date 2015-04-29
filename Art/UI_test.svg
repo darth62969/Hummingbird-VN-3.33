@@ -9,15 +9,15 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="512"
+   width="1920"
    height="256"
    id="svg2"
    version="1.1"
    inkscape:version="0.48.5 r10040"
-   inkscape:export-filename="E:\Hummingbird-VN-3.33\UI_test.png"
+   inkscape:export-filename="E:\Hummingbird-VN-3.33\UI_test 1920x256.png"
    inkscape:export-xdpi="185.80646"
    inkscape:export-ydpi="185.80646"
-   sodipodi:docname="New document 1">
+   sodipodi:docname="UI_test.svg">
   <defs
      id="defs4">
     <marker
@@ -155,8 +155,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.979899"
-     inkscape:cx="238.14654"
-     inkscape:cy="116.7375"
+     inkscape:cx="1618.6383"
+     inkscape:cy="155.58421"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -185,43 +185,38 @@
      id="layer1"
      transform="translate(0,-796.36218)">
     <rect
-       style="fill:#b8b8b8;fill-opacity:0.58510623;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       style="fill:#b8b8b8;fill-opacity:0.58510623;stroke:#000000;stroke-width:1.82823598;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
        id="rect2985"
-       width="596.49506"
-       height="336.88586"
-       x="-15.152288"
-       y="-16.236111"
-       transform="translate(0,796.36218)"
+       width="1998.6667"
+       height="336.05762"
+       x="-30.452505"
+       y="761.96875"
        inkscape:export-filename="E:\Hummingbird-VN-3.33\UI_test_512x124.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90" />
     <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:url(#DotL);marker-mid:none;marker-end:url(#Tail)"
-       d="m 1.0101525,255 391.9391875,0 51.51778,-99 12.6269,99 53.53809,0"
+       d="m 5,1048.3622 1792.235,0 51.5178,-98.00002 12.6269,98.00002 53.6203,0"
        id="path3755"
        inkscape:connector-curvature="0"
-       transform="translate(0,796.36218)"
        sodipodi:nodetypes="ccccc" />
     <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:url(#DotL)"
-       d="M 450,199.5 414.875,199.4 387.89858,249 2.5253814,249"
+       d="m 1854,993.36218 -34,0 -26,49.00002 -1789,0"
        id="path3759"
        inkscape:connector-curvature="0"
-       transform="translate(0,796.36218)"
        sodipodi:nodetypes="cccc" />
     <path
        style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-start:url(#DotL)"
-       d="M 484.82298,255.70677 484,156 l 25.62196,-18.18785 0,-136.3705916"
+       d="m 1889,1048.3622 0,-98.57145 26,-18.42857 0,-135"
        id="path3763"
        inkscape:connector-curvature="0"
-       transform="translate(0,796.36218)"
-       sodipodi:nodetypes="cc" />
+       sodipodi:nodetypes="cccc" />
     <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:url(#DotL);marker-mid:none;marker-end:url(#DotM)"
-       d="m 509.65992,155.49492 -77.81971,-0.005 L 384.32162,243 2.5253814,243"
+       d="m 1915,950.36218 -77,-1 -48,87.00002 -1785,0"
        id="path6541"
        inkscape:connector-curvature="0"
-       transform="translate(0,796.36218)"
        sodipodi:nodetypes="cccc" />
   </g>
 </svg>
