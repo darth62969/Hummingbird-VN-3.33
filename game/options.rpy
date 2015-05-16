@@ -17,13 +17,13 @@ init -1 python hide:
 
     ## These control the width and height of the screen.
 
-    config.screen_width = 800
-    config.screen_height = 600
+    config.screen_width = 1920
+    config.screen_height = 1080
 
     ## This controls the title of the window, when Ren'Py is
     ## running in a window.
 
-    config.window_title = u"HummingBird VN 3.33"
+    config.window_title = "HummingBird VN 3.33"
 
     # These control the name and version of the game, that are reported
     # with tracebacks and other debugging logs.
@@ -94,15 +94,15 @@ init -1 python hide:
     ## are the size of the left/right and top/bottom borders,
     ## respectively.
 
-    # style.window.background = Frame("UI_test_512x124.png", 512, 124)
+    style.window.background = Frame("UI/ButtonTemplate_v2 1920x256.png", 0, 0, 0, 0, Tile=True)
 
     ## Margin is space surrounding the window, where the background
     ## is not drawn.
 
-    # style.window.left_margin = 6
-    # style.window.right_margin = 6
-    # style.window.top_margin = 6
-    # style.window.bottom_margin = 6
+    style.window.left_margin = 0
+    style.window.right_margin = 0
+    style.window.top_margin = 0
+    style.window.bottom_margin = 0
 
     ## Padding is space inside the window, where the background is
     ## drawn.
@@ -115,7 +115,8 @@ init -1 python hide:
     ## This is the minimum height of the window, including the margins
     ## and padding.
 
-    style.window.yminimum = 124
+    style.window.yminimum = 256
+    style.window.xminimum = 1920
 
 
     #########################################
@@ -272,7 +273,7 @@ init -1 python hide:
 
     ## Should we start in fullscreen mode?
 
-    config.default_fullscreen = False
+    config.default_fullscreen = True
 
     ## The default text speed in characters per second. 0 is infinite.
 
