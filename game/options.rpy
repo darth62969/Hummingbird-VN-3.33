@@ -94,7 +94,7 @@ init -1 python hide:
     ## are the size of the left/right and top/bottom borders,
     ## respectively.
 
-    style.window.background = Frame("UI/ButtonTemplate_v2 1920x256.png", 0, 0, 0, 0, Tile=True)
+    style.window.background = Frame("gui/ui/UI.png", 0, 0, 0, 0, Tile=True)
 
     ## Margin is space surrounding the window, where the background
     ## is not drawn.

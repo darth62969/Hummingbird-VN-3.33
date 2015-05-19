@@ -1,0 +1,89 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While loading <'Image' 'gui/gm/ButtonTemplate_v2 1920x256.png'>:
+  File "game/script.rpy", line 15, in script
+    e "You've created a new Ren'Py game."
+IOError: Couldn't find file 'gui/gm/ButtonTemplate_v2 1920x256.png'.
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/script.rpy", line 15, in script
+    e "You've created a new Ren'Py game."
+  File "C:\Users\Sidious\Downloads\renpy-6.99.1-sdk\renpy\ast.py", line 593, in execute
+    renpy.exports.say(who, what, interact=self.interact)
+  File "C:\Users\Sidious\Downloads\renpy-6.99.1-sdk\renpy\exports.py", line 1033, in say
+    who(what, interact=interact)
+  File "C:\Users\Sidious\Downloads\renpy-6.99.1-sdk\renpy\character.py", line 826, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, **display_args)
+  File "C:\Users\Sidious\Downloads\renpy-6.99.1-sdk\renpy\character.py", line 688, in do_display
+    **display_args)
+  File "C:\Users\Sidious\Downloads\renpy-6.99.1-sdk\renpy\character.py", line 491, in display_say
+    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
+  File "C:\Users\Sidious\Downloads\renpy-6.99.1-sdk\renpy\ui.py", line 247, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\Sidious\Downloads\renpy-6.99.1-sdk\renpy\display\core.py", line 2243, in interact
+    repeat, rv = self.interact_core(preloads=preloads, **kwargs)
+  File "C:\Users\Sidious\Downloads\renpy-6.99.1-sdk\renpy\display\core.py", line 2572, in interact_core
+    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
+  File "C:\Users\Sidious\Downloads\renpy-6.99.1-sdk\renpy\display\core.py", line 1694, in draw_screen
+    renpy.config.screen_height,
+  File "renpy/display/render.pyx", line 364, in renpy.display.render.render_screen (gen\renpy.display.render.c:5734)
+    rv = render(root, width, height, 0, 0)
+  File "renpy/display/render.pyx", line 175, in renpy.display.render.render (gen\renpy.display.render.c:2600)
+    rv = d.render(widtho, heighto, st, at)
+  File "C:\Users\Sidious\Downloads\renpy-6.99.1-sdk\renpy\display\layout.py", line 629, in render
+    surf = render(child, width, height, cst, cat)
+  File "renpy/display/render.pyx", line 99, in renpy.display.render.render (gen\renpy.display.render.c:2921)
+    cpdef render(d, object widtho, object heighto, double st, double at):
+  File "renpy/display/render.pyx", line 175, in renpy.display.render.render (gen\renpy.display.render.c:2600)
+    rv = d.render(widtho, heighto, st, at)
+  File "C:\Users\Sidious\Downloads\renpy-6.99.1-sdk\renpy\display\layout.py", line 629, in render
+    surf = render(child, width, height, cst, cat)
+  File "renpy/display/render.pyx", line 99, in renpy.display.render.render (gen\renpy.display.render.c:2921)
+    cpdef render(d, object widtho, object heighto, double st, double at):
+  File "renpy/display/render.pyx", line 175, in renpy.display.render.render (gen\renpy.display.render.c:2600)
+    rv = d.render(widtho, heighto, st, at)
+  File "C:\Users\Sidious\Downloads\renpy-6.99.1-sdk\renpy\display\layout.py", line 629, in render
+    surf = render(child, width, height, cst, cat)
+  File "renpy/display/render.pyx", line 99, in renpy.display.render.render (gen\renpy.display.render.c:2921)
+    cpdef render(d, object widtho, object heighto, double st, double at):
+  File "renpy/display/render.pyx", line 175, in renpy.display.render.render (gen\renpy.display.render.c:2600)
+    rv = d.render(widtho, heighto, st, at)
+  File "C:\Users\Sidious\Downloads\renpy-6.99.1-sdk\renpy\display\screen.py", line 598, in render
+    child = renpy.display.render.render(self.child, w, h, st, at)
+  File "renpy/display/render.pyx", line 99, in renpy.display.render.render (gen\renpy.display.render.c:2921)
+    cpdef render(d, object widtho, object heighto, double st, double at):
+  File "renpy/display/render.pyx", line 175, in renpy.display.render.render (gen\renpy.display.render.c:2600)
+    rv = d.render(widtho, heighto, st, at)
+  File "C:\Users\Sidious\Downloads\renpy-6.99.1-sdk\renpy\display\layout.py", line 629, in render
+    surf = render(child, width, height, cst, cat)
+  File "renpy/display/render.pyx", line 99, in renpy.display.render.render (gen\renpy.display.render.c:2921)
+    cpdef render(d, object widtho, object heighto, double st, double at):
+  File "renpy/display/render.pyx", line 175, in renpy.display.render.render (gen\renpy.display.render.c:2600)
+    rv = d.render(widtho, heighto, st, at)
+  File "C:\Users\Sidious\Downloads\renpy-6.99.1-sdk\renpy\display\layout.py", line 995, in render
+    back = render(style.background, bw, bh, st, at)
+  File "renpy/display/render.pyx", line 99, in renpy.display.render.render (gen\renpy.display.render.c:2921)
+    cpdef render(d, object widtho, object heighto, double st, double at):
+  File "renpy/display/render.pyx", line 175, in renpy.display.render.render (gen\renpy.display.render.c:2600)
+    rv = d.render(widtho, heighto, st, at)
+  File "C:\Users\Sidious\Downloads\renpy-6.99.1-sdk\renpy\display\imagelike.py", line 181, in render
+    crend = render(self.image, width, height, st, at)
+  File "renpy/display/render.pyx", line 99, in renpy.display.render.render (gen\renpy.display.render.c:2921)
+    cpdef render(d, object widtho, object heighto, double st, double at):
+  File "renpy/display/render.pyx", line 175, in renpy.display.render.render (gen\renpy.display.render.c:2600)
+    rv = d.render(widtho, heighto, st, at)
+  File "C:\Users\Sidious\Downloads\renpy-6.99.1-sdk\renpy\display\im.py", line 478, in render
+    im = cache.get(self)
+  File "C:\Users\Sidious\Downloads\renpy-6.99.1-sdk\renpy\display\im.py", line 200, in get
+    surf = image.load()
+  File "C:\Users\Sidious\Downloads\renpy-6.99.1-sdk\renpy\display\im.py", line 529, in load
+    surf = renpy.display.pgrender.load_image(renpy.loader.load(self.filename), self.filename)
+  File "C:\Users\Sidious\Downloads\renpy-6.99.1-sdk\renpy\loader.py", line 450, in load
+    raise IOError("Couldn't find file '%s'." % name)
+IOError: Couldn't find file 'gui/gm/ButtonTemplate_v2 1920x256.png'.
+
+Windows-7-6.1.7601-SP1
+Ren'Py 6.99.1.329
+HummingBird VN 3.33 0.0

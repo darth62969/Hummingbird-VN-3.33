@@ -1,4 +1,4 @@
-﻿# This file is in the public domain. Feel free to modify it as a basis
+# This file is in the public domain. Feel free to modify it as a basis
 # for your own screens.
 
 # Note that many of these screens may be given additional arguments in the
@@ -534,15 +534,13 @@ screen quick_menu():
 
         xalign 1.0
         yalign 1.0
+        
+        imagebutton auto "gui/qm/prefs_%s.png" xpos 207 ypos -127 focus_mask True action ShowMenu('preferences')
+        imagebutton auto "gui/qm/save_%s.png" xpos 130 ypos -205 focus_mask True action ShowMenu('save')
+        imagebutton auto "gui/qm/load_%s.png" xpos -50 ypos -205 focus_mask True action ShowMenu('load')
+        imagebutton auto "gui/qm/quit_%s.png" xpos -126 ypos -64 focus_mask True action Quit(confirm=True)
 
-        textbutton _("Back") action Rollback()
-        textbutton _("Save") action ShowMenu('save')
-        textbutton _("Q.Save") action QuickSave()
-        textbutton _("Q.Load") action QuickLoad()
-        textbutton _("Skip") action Skip()
-        textbutton _("F.Skip") action Skip(fast=True, confirm=True)
-        textbutton _("Auto") action Preference("auto-forward", "toggle")
-        textbutton _("Prefs") action ShowMenu('preferences')
+        
 
 init -2:
     style quick_button:
