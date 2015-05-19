@@ -1,9 +1,0 @@
-﻿I'm sorry, but errors were detected in your script. Please correct the
-errors listed below, and try again.
-
-
-File "game/screens.rpy", line 538: expected a keyword argument, colon, or end of line.
-    imagebutton "\gui\gm\prefs.png" xpos 0 ypos 0 focus_mask True action ShowMenu('preferences')
-                ^
-
-Ren'Py Version: Ren'Py 6.99.1.329
