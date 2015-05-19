@@ -2,4 +2,4 @@ game/**/*.rpyc
 game/**/bytecode.rpyb
 game/saves/*
 /log.txt
-erros.txt
+errors.txt
