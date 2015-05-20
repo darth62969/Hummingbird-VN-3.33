@@ -23,3 +23,16 @@ https://docs.google.com/document/d/1O_Q1eePSmFz7SYh-pc13ttlYU4da2go3wJB4eYHx8fY/
 ### The Characters:
 
 https://docs.google.com/document/d/1jaOvkHxVA2GCRA3cViOOjsakmwnTFVTaSgnlKtOklsk/edit
+
+## Building:
+
+After you've checked out this repository, please do the following:
+
+1. Download the latest version of [RenPy](http://renpy.org/latest.html)
+2. Open Ren'Py
+3. Make sure that you can view the downloaded Hummingbird-VN-3.33 repository in the list of projects. If you cannot, you can change the Ren'Py projects directory:
+  - Click Preferences
+  - Click the filepath beneath the Projects Directory heading
+  - Navigate and select the directory containing the downloaded VN repository
+4. Click the Hummingbird VN title in the projects list.
+5. Click Launch Project
