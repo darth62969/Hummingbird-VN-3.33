@@ -95,6 +95,7 @@ init -1 python hide:
     ## respectively.
 
     style.window.background = Frame("gui/ui/UI.png", 0, 0, 0, 0, Tile=True)
+    style.say_who_window.background = Frame("gui/ui/namebox.png", 0, 0, 0, 0, Tile=True)
 
     ## Margin is space surrounding the window, where the background
     ## is not drawn.
@@ -107,10 +108,10 @@ init -1 python hide:
     ## Padding is space inside the window, where the background is
     ## drawn.
 
-    # style.window.left_padding = 6
-    # style.window.right_padding = 6
-    # style.window.top_padding = 6
-    # style.window.bottom_padding = 6
+    style.window.left_padding = 300
+    style.window.right_padding = 300
+    style.window.top_padding = 50
+    style.window.bottom_padding = 50
 
     ## This is the minimum height of the window, including the margins
     ## and padding.
@@ -148,7 +149,7 @@ init -1 python hide:
 
     ## The default size of text.
 
-    # style.default.size = 22
+    style.default.size = 32
 
     ## Note that these only change the size of some of the text. Other
     ## buttons have their own styles.
