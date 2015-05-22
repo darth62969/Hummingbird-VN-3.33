@@ -75,7 +75,6 @@ label start:
     
     "Someone screams from behind, as the ogres in front fall to a blast of color, are blown away, defeated, and disappear."
     
-    hide unknown
     show katsumi excited
     
     unknown "Come on!"
