@@ -87,9 +87,9 @@ label start:
     
     "It’s just my luck as always."
     
-    scene field_day with Dissolve(.5)
-    
+    scene field_day
     show katsumi exhausted
+    with Dissolve(.5)
     
     h "Well, that was annoying."
     
