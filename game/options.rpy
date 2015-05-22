@@ -113,12 +113,19 @@ init -1 python hide:
     style.window.top_padding = 50
     style.window.bottom_padding = 50
 
+    style.say_who_window.left_padding = 20
+    style.say_who_window.right_padding = 40
+    style.say_who_window.top_padding = 10
+    style.say_who_window.bottom_padding = 20
+
     ## This is the minimum height of the window, including the margins
     ## and padding.
 
     style.window.yminimum = 256
     style.window.xminimum = 1920
 
+    style.say_who_window.yminimum = 64
+    style.say_who_window.xminimum = 256
 
     #########################################
     ## This lets you change the placement of the main menu.
