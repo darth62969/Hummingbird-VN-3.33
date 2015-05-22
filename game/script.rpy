@@ -8,7 +8,7 @@ define h = Character('Hirohito', color="#c8ffc8", show_two_window=True)
 define k = Character('Katsumi', color="#c8ffc8", show_two_window=True)
 define m = Character('Mana', color="#c8ffc8", show_two_window=True)
 define t = Character('Takashi', color="#c8ffc8", show_two_window=True)
-define unknown = Character ('???', color="#c8ffc8", show_two_window=True)
+define unknown = Character('???', color="#c8ffc8", show_two_window=True)
 
 image katsumi neutral = Placeholder("girl")
 image katsumi happy = Placeholder("girl")
