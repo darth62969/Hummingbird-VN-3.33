@@ -17,7 +17,7 @@ image katsumi_game_excited = "sprites/FillerSprite.png"
 image katsumi_game_angry = "sprites/FillerSprite.png"
 image katsumi_game_exhausted = "sprites/FillerSprite.png"
 
-image mana_nuetral = "sprites/FillerSprite.png"
+image mana_neutral = "sprites/FillerSprite.png"
 image mana_happy = "sprites/FillerSprite.png"
 image mana_sad = "sprites/FillerSprite.png"
 image mana_dejected = "sprites/FillerSprite.png"
@@ -125,7 +125,7 @@ label start:
     
     "That appeared once again."
     
-    show mana_nuetral
+    show mana_neutral
     
     m "Hirohito, meals are fundamental to keep your body function properly. You ought to take one, now."
     
