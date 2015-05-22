@@ -22,12 +22,12 @@ image mana happy = Placeholder("girl")
 image mana sad = Placeholder("girl")
 image mana dejected = Placeholder("girl")
 
-image dungeon = "backgrounds/FillerBackground.jpg"
-image field_dawn = "backgrounds/FillerBackground.jpg"
-image field_day = "backgrounds/FillerBackground.jpg"
-image field_dusk = "backgrounds/FillerBackground.jpg"
-image field_night = "backgrounds/FillerBackground.jpg"
-image room_night = "backgrounds/FillerBackground.jpg"
+image dungeon = im.FactorScale("backgrounds/FillerBackground.jpg", 1.5)
+image field_dawn = im.FactorScale("backgrounds/FillerBackground.jpg", 1.5)
+image field_day = im.FactorScale("backgrounds/FillerBackground.jpg", 1.5)
+image field_dusk = im.FactorScale("backgrounds/FillerBackground.jpg", 1.5)
+image field_night = im.FactorScale("backgrounds/FillerBackground.jpg", 1.5)
+image room_night = im.FactorScale("backgrounds/FillerBackground.jpg", 1.5)
 
 
 # The game starts here.
