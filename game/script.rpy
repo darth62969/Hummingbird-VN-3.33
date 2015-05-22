@@ -10,17 +10,17 @@ define m = Character('Mana', color="#c8ffc8", show_two_window=True)
 define t = Character('Takashi', color="#c8ffc8", show_two_window=True)
 define unknown = Character ('???', color="#c8ffc8", show_two_window=True)
 
-image katsumi_game_neutral = Placeholder("girl")
-image katsumi_game_happy = Placeholder("girl")
-image katsumi_game_sad = Placeholder("girl")
-image katsumi_game_excited = Placeholder("girl")
-image katsumi_game_angry = Placeholder("girl")
-image katsumi_game_exhausted = Placeholder("girl")
+image katsumi neutral = Placeholder("girl")
+image katsumi happy = Placeholder("girl")
+image katsumi sad = Placeholder("girl")
+image katsumi excited = Placeholder("girl")
+image katsumi angry = Placeholder("girl")
+image katsumi exhausted = Placeholder("girl")
 
-image mana_neutral = Placeholder("girl")
-image mana_happy = Placeholder("girl")
-image mana_sad = Placeholder("girl")
-image mana_dejected = Placeholder("girl")
+image mana neutral = Placeholder("girl")
+image mana happy = Placeholder("girl")
+image mana sad = Placeholder("girl")
+image mana dejected = Placeholder("girl")
 
 image dungeon = "backgrounds/FillerBackground.jpg"
 image field_dawn = "backgrounds/FillerBackground.jpg"
@@ -75,13 +75,14 @@ label start:
     
     "Someone screams from behind, as the ogres in front fall to a blast of color, are blown away, defeated, and disappear."
     
-    show katsumi_game_excited
+    hide unknown
+    show katsumi excited
     
     unknown "Come on!"
     
     "My arm is suddenly in the hand of some strange girl who’s now dragging me along with her as an even larger number of ogres chase us from behind."
     
-    hide katsumi_game_excited
+    hide katsumi excited
     
     "Truly this must be the genius who triggered the trap.{w} Only someone of the greatest intelligence can properly run a train such as this.{w} The complexity and beauty of an angry horde of ogres has no rival."
     
@@ -89,7 +90,7 @@ label start:
     
     scene field_day with Dissolve(.5)
     
-    show katsumi_game_exhausted
+    show katsumi exhausted
     
     h "Well, that was annoying."
     
@@ -103,21 +104,17 @@ label start:
     
     h "It’s your fault in the first place.{w} Not only did you trigger the trap but you failed to nobly sacrifice yourself for the good of others. What a heartless deed!"
     
-    hide katsumi_game_exhausted
-    show katsumi_game_angry
+    show katsumi angry
     
     k "Just because I messed up doesn’t mean you have to be a jerk about it. Geez."
     
     h "Well your little {i}mistake{/i} cost me a fair amount of experience."
     
-    hide katsumi_game_angry
-    show katsumi_game_neutral
+    show katsumi neutral
     
     k "Calm down it’s just a game."
     
     h "Now I’ll have you know-"
-    
-    hide katsumi_game_neutral
     
     scene black with Dissolve(.5)
     
@@ -125,7 +122,7 @@ label start:
     
     "That appeared once again."
     
-    show mana_neutral
+    show mana neutral
     
     m "Hirohito, meals are fundamental to keep your body function properly. You ought to take one, now."
     
@@ -147,8 +144,7 @@ label start:
     
     "I took a deep breath, and I could almost actually breathe in the wind I felt against my skin.{w} This thing was too well made."
     
-    hide mana_neutral
-    show mana_dejected
+    show mana dejected
     
     m "Hirohito...?"
     
