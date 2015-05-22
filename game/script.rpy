@@ -10,17 +10,17 @@ define m = Character('Mana', color="#c8ffc8", show_two_window=True)
 define t = Character('Takashi', color="#c8ffc8", show_two_window=True)
 define unknown = Character ('???', color="#c8ffc8", show_two_window=True)
 
-image katsumi_game_neutral = "sprites/FillerSprite.png"
-image katsumi_game_happy = "sprites/FillerSprite.png"
-image katsumi_game_sad = "sprites/FillerSprite.png"
-image katsumi_game_excited = "sprites/FillerSprite.png"
-image katsumi_game_angry = "sprites/FillerSprite.png"
-image katsumi_game_exhausted = "sprites/FillerSprite.png"
+image katsumi_game_neutral = Placeholder("girl")
+image katsumi_game_happy = Placeholder("girl")
+image katsumi_game_sad = Placeholder("girl")
+image katsumi_game_excited = Placeholder("girl")
+image katsumi_game_angry = Placeholder("girl")
+image katsumi_game_exhausted = Placeholder("girl")
 
-image mana_neutral = "sprites/FillerSprite.png"
-image mana_happy = "sprites/FillerSprite.png"
-image mana_sad = "sprites/FillerSprite.png"
-image mana_dejected = "sprites/FillerSprite.png"
+image mana_neutral = Placeholder("girl")
+image mana_happy = Placeholder("girl")
+image mana_sad = Placeholder("girl")
+image mana_dejected = Placeholder("girl")
 
 image dungeon = "backgrounds/FillerBackground.jpg"
 image field_dawn = "backgrounds/FillerBackground.jpg"
