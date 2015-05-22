@@ -27,7 +27,6 @@ image field_dawn = "backgrounds/FillerBackground.jpg"
 image field_day = "backgrounds/FillerBackground.jpg"
 image field_dusk = "backgrounds/FillerBackground.jpg"
 image field_night = "backgrounds/FillerBackground.jpg"
-image dark = "backgrounds/Dark.png"
 image room_night = "backgrounds/FillerBackground.jpg"
 
 
@@ -120,7 +119,7 @@ label start:
     
     hide katsumi_game_neutral
     
-    scene dark with Dissolve(.5)
+    scene black with Dissolve(.5)
     
     "Black. Everything became black."
     
