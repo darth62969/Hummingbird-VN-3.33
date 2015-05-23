@@ -28,6 +28,7 @@ image field_day = im.FactorScale("backgrounds/FillerBackground.jpg", 1.5)
 image field_dusk = im.FactorScale("backgrounds/FillerBackground.jpg", 1.5)
 image field_night = im.FactorScale("backgrounds/FillerBackground.jpg", 1.5)
 image room_night = im.FactorScale("backgrounds/FillerBackground.jpg", 1.5)
+image dark = "backgrounds/Dark.png"
 
 
 # The game starts here.
@@ -115,7 +116,7 @@ label start:
     
     h "Now I’ll have you know-"
     
-    scene black with Dissolve(.5)
+    scene dark with Dissolve(.5)
     
     "Black. Everything became black."
     
