@@ -8,27 +8,27 @@ define h = Character('Hirohito', color="#c8ffc8", show_two_window=True)
 define k = Character('Katsumi', color="#c8ffc8", show_two_window=True)
 define m = Character('Mana', color="#c8ffc8", show_two_window=True)
 define t = Character('Takashi', color="#c8ffc8", show_two_window=True)
-define unknown = Character ('???', color="#c8ffc8", show_two_window=True)
+define unknown = Character('???', color="#c8ffc8", show_two_window=True)
 
-image katsumi_game_neutral = "sprites/FillerSprite.png"
-image katsumi_game_happy = "sprites/FillerSprite.png"
-image katsumi_game_sad = "sprites/FillerSprite.png"
-image katsumi_game_excited = "sprites/FillerSprite.png"
-image katsumi_game_angry = "sprites/FillerSprite.png"
-image katsumi_game_exhausted = "sprites/FillerSprite.png"
+image katsumi neutral = Placeholder("girl")
+image katsumi happy = Placeholder("girl")
+image katsumi sad = Placeholder("girl")
+image katsumi excited = Placeholder("girl")
+image katsumi angry = Placeholder("girl")
+image katsumi exhausted = Placeholder("girl")
 
-image mana_nuetral = "sprites/FillerSprite.png"
-image mana_happy = "sprites/FillerSprite.png"
-image mana_sad = "sprites/FillerSprite.png"
-image mana_dejected = "sprites/FillerSprite.png"
+image mana neutral = Placeholder("girl")
+image mana happy = Placeholder("girl")
+image mana sad = Placeholder("girl")
+image mana dejected = Placeholder("girl")
 
-image dungeon = "backgrounds/FillerBackground.jpg"
-image field_dawn = "backgrounds/FillerBackground.jpg"
-image field_day = "backgrounds/FillerBackground.jpg"
-image field_dusk = "backgrounds/FillerBackground.jpg"
-image field_night = "backgrounds/FillerBackground.jpg"
+image dungeon = im.FactorScale("backgrounds/FillerBackground.jpg", 1.5)
+image field_dawn = im.FactorScale("backgrounds/FillerBackground.jpg", 1.5)
+image field_day = im.FactorScale("backgrounds/FillerBackground.jpg", 1.5)
+image field_dusk = im.FactorScale("backgrounds/FillerBackground.jpg", 1.5)
+image field_night = im.FactorScale("backgrounds/FillerBackground.jpg", 1.5)
+image room_night = im.FactorScale("backgrounds/FillerBackground.jpg", 1.5)
 image dark = "backgrounds/Dark.png"
-image room_night = "backgrounds/FillerBackground.jpg"
 
 
 # The game starts here.
@@ -76,21 +76,21 @@ label start:
     
     "Someone screams from behind, as the ogres in front fall to a blast of color, are blown away, defeated, and disappear."
     
-    show katsumi_game_excited
+    show katsumi excited
     
     unknown "Come on!"
     
     "My arm is suddenly in the hand of some strange girl who’s now dragging me along with her as an even larger number of ogres chase us from behind."
     
-    hide katsumi_game_excited
+    hide katsumi excited
     
     "Truly this must be the genius who triggered the trap.{w} Only someone of the greatest intelligence can properly run a train such as this.{w} The complexity and beauty of an angry horde of ogres has no rival."
     
     "It’s just my luck as always."
     
-    scene field_day with Dissolve(.5)
-    
-    show katsumi_game_exhausted
+    scene field_day
+    show katsumi exhausted
+    with Dissolve(.5)
     
     h "Well, that was annoying."
     
@@ -104,21 +104,17 @@ label start:
     
     h "It’s your fault in the first place.{w} Not only did you trigger the trap but you failed to nobly sacrifice yourself for the good of others. What a heartless deed!"
     
-    hide katsumi_game_exhausted
-    show katsumi_game_angry
+    show katsumi angry
     
     k "Just because I messed up doesn’t mean you have to be a jerk about it. Geez."
     
     h "Well your little {i}mistake{/i} cost me a fair amount of experience."
     
-    hide katsumi_game_angry
-    show katsumi_game_neutral
+    show katsumi neutral
     
     k "Calm down it’s just a game."
     
     h "Now I’ll have you know-"
-    
-    hide katsumi_game_neutral
     
     scene dark with Dissolve(.5)
     
@@ -126,7 +122,7 @@ label start:
     
     "That appeared once again."
     
-    show mana_nuetral
+    show mana neutral
     
     m "Hirohito, meals are fundamental to keep your body function properly. You ought to take one, now."
     
@@ -148,8 +144,7 @@ label start:
     
     "I took a deep breath, and I could almost actually breathe in the wind I felt against my skin.{w} This thing was too well made."
     
-    hide mana_neutral
-    show mana_dejected
+    show mana dejected
     
     m "Hirohito...?"
     
