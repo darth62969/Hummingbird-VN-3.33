@@ -214,10 +214,24 @@ init -2:
 screen navigation():
 
     # The background of the game menu.
-    window:
-        style "gm_root"
+
 
     # The various buttons.
+
+    hbox:
+        style_group "navigation"
+
+        xalign 0
+        yalign 1.0
+
+        imagebutton auto "gui/nv/rtn_%s.png" xpos 1494 ypos -892 focus_mask True action Return()
+        imagebutton auto "gui/nv/prefs_%s.png" xpos 1193 ypos -762 focus_mask True action ShowMenu('preferences')
+        imagebutton auto "gui/nv/save_%s.png" xpos 892 ypos -635 focus_mask True action ShowMenu('save')
+        imagebutton auto "gui/nv/load_%s.png" xpos 591 ypos -507 focus_mask True action ShowMenu("load")
+        imagebutton auto "gui/nv/mm_%s.png" xpos 290 ypos -381 focus_mask True action MainMenu()
+        imagebutton auto "gui/nv/help_%s.png" xpos -11 ypos -251 focus_mask True action Help()
+        imagebutton auto "gui/nv/quit_%s.png" xpos -312 ypos -123 focus_mask True action Quit(confirm=True)
+
     frame:
         style_group "gm_nav"
         xalign .98
@@ -225,13 +239,6 @@ screen navigation():
 
         has vbox
 
-        textbutton _("Return") action Return()
-        textbutton _("Preferences") action ShowMenu("preferences")
-        textbutton _("Save Game") action ShowMenu("save")
-        textbutton _("Load Game") action ShowMenu("load")
-        textbutton _("Main Menu") action MainMenu()
-        textbutton _("Help") action Help()
-        textbutton _("Quit") action Quit()
 
 init -2:
 
@@ -343,113 +350,125 @@ init -2:
 screen preferences():
 
     tag menu
-
-    # Include the navigation.
+    
+    add "gui/ui/Preferences Screen.png" xalign 1.0 yalign 1.0
+    
+# Include the navigation.
     use navigation
 
-    # Put the navigation columns in a three-wide grid.
-    grid 3 1:
-        style_group "prefs"
-        xfill True
-
-        # The left column.
-        vbox:
-            frame:
-                style_group "pref"
-                has vbox
-
-                label _("Display")
-                textbutton _("Window") action Preference("display", "window")
-                textbutton _("Fullscreen") action Preference("display", "fullscreen")
-
-            frame:
-                style_group "pref"
-                has vbox
-
-                label _("Transitions")
-                textbutton _("All") action Preference("transitions", "all")
-                textbutton _("None") action Preference("transitions", "none")
-
-            frame:
-                style_group "pref"
-                has vbox
-
-                label _("Text Speed")
-                bar value Preference("text speed")
-
-            frame:
-                style_group "pref"
-                has vbox
-
-                textbutton _("Joystick...") action Preference("joystick")
+    viewport id "pref_vp":
+        draggable True
+        xalign 0
+        yalign 0
+        xsize 1100
+        ysize 881
+        xpos 100
+        ypos 100
 
 
-        vbox:
-            frame:
-                style_group "pref"
-                has vbox
+        grid 1 1:
+            style_group "prefs"
+            xfill True
 
-                label _("Skip")
-                textbutton _("Seen Messages") action Preference("skip", "seen")
-                textbutton _("All Messages") action Preference("skip", "all")
 
-            frame:
-                style_group "pref"
-                has vbox
-
-                textbutton _("Begin Skipping") action Skip()
-
-            frame:
-                style_group "pref"
-                has vbox
-
-                label _("After Choices")
-                textbutton _("Stop Skipping") action Preference("after choices", "stop")
-                textbutton _("Keep Skipping") action Preference("after choices", "skip")
-
-            frame:
-                style_group "pref"
-                has vbox
-
-                label _("Auto-Forward Time")
-                bar value Preference("auto-forward time")
-
-                if config.has_voice:
-                    textbutton _("Wait for Voice") action Preference("wait for voice", "toggle")
-
-        vbox:
-            frame:
-                style_group "pref"
-                has vbox
-
-                label _("Music Volume")
-                bar value Preference("music volume")
-
-            frame:
-                style_group "pref"
-                has vbox
-
-                label _("Sound Volume")
-                bar value Preference("sound volume")
-
-                if config.sample_sound:
-                    textbutton _("Test"):
-                        action Play("sound", config.sample_sound)
-                        style "soundtest_button"
-
-            if config.has_voice:
+            vbox:
                 frame:
                     style_group "pref"
                     has vbox
 
-                    label _("Voice Volume")
-                    bar value Preference("voice volume")
+                    label _("Display")
+                    textbutton _("Window") action Preference("display", "window")
+                    textbutton _("Fullscreen") action Preference("display", "fullscreen")
 
-                    textbutton _("Voice Sustain") action Preference("voice sustain", "toggle")
-                    if config.sample_voice:
+                frame:
+                    style_group "pref"
+                    has vbox
+
+                    label _("Transitions")
+                    textbutton _("All") action Preference("transitions", "all")
+                    textbutton _("None") action Preference("transitions", "none")
+
+                frame:
+                    style_group "pref"
+                    has vbox
+    
+                    label _("Text Speed")
+                    bar value Preference("text speed")
+    
+                frame:
+                    style_group "pref"
+                    has vbox
+    
+                    textbutton _("Joystick...") action Preference("joystick")
+    
+    
+                frame:
+                    style_group "pref"
+                    has vbox
+    
+                    label _("Skip")
+                    textbutton _("Seen Messages") action Preference("skip", "seen")
+                    textbutton _("All Messages") action Preference("skip", "all")
+
+                frame:
+                    style_group "pref"
+                    has vbox
+    
+                    textbutton _("Begin Skipping") action Skip()
+    
+                frame:
+                    style_group "pref"
+                    has vbox
+    
+                    label _("After Choices")
+                    textbutton _("Stop Skipping") action Preference("after choices", "stop")
+                    textbutton _("Keep Skipping") action Preference("after choices", "skip")
+    
+                frame:
+                    style_group "pref"
+                    has vbox
+    
+                    label _("Auto-Forward Time")
+                    bar value Preference("auto-forward time")
+    
+                    if config.has_voice:
+                        textbutton _("Wait for Voice") action Preference("wait for voice", "toggle")
+
+                frame:
+                    style_group "pref"
+                    has vbox
+    
+                    label _("Music Volume")
+                    bar value Preference("music volume")
+    
+                frame:
+                    style_group "pref"
+                    has vbox
+    
+                    label _("Sound Volume")
+                    bar value Preference("sound volume")
+    
+                    if config.sample_sound:
                         textbutton _("Test"):
-                            action Play("voice", config.sample_voice)
+                            action Play("sound", config.sample_sound)
                             style "soundtest_button"
+    
+                if config.has_voice:
+                    frame:
+                        style_group "pref"
+                        has vbox
+    
+                        label _("Voice Volume")
+                        bar value Preference("voice volume")
+    
+                        textbutton _("Voice Sustain") action Preference("voice sustain", "toggle")
+                        if config.sample_voice:
+                            textbutton _("Test"):
+                                action Play("voice", config.sample_voice)
+                                style "soundtest_button"
+
+
+
 
 init -2:
     style pref_frame:
