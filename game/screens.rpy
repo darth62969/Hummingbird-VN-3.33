@@ -224,11 +224,11 @@ screen navigation():
         xalign 0
         yalign 1.0
 
-        imagebutton auto "gui/nv/rtn_%s.png" xpos 1494 ypos -892 focus_mask True action Return()
-        imagebutton auto "gui/nv/prefs_%s.png" xpos 1193 ypos -762 focus_mask True action ShowMenu('preferences')
+        imagebutton auto "gui/nv/rtn_%s.png" xpos 1494 ypos -891 focus_mask True action Return()
+        imagebutton auto "gui/nv/prefs_%s.png" xpos 1193 ypos -763 focus_mask True action ShowMenu('preferences')
         imagebutton auto "gui/nv/save_%s.png" xpos 892 ypos -635 focus_mask True action ShowMenu('save')
         imagebutton auto "gui/nv/load_%s.png" xpos 591 ypos -507 focus_mask True action ShowMenu("load")
-        imagebutton auto "gui/nv/mm_%s.png" xpos 290 ypos -381 focus_mask True action MainMenu()
+        imagebutton auto "gui/nv/mm_%s.png" xpos 290 ypos -379 focus_mask True action MainMenu()
         imagebutton auto "gui/nv/help_%s.png" xpos -11 ypos -251 focus_mask True action Help()
         imagebutton auto "gui/nv/quit_%s.png" xpos -312 ypos -123 focus_mask True action Quit(confirm=True)
 
