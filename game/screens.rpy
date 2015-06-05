@@ -232,12 +232,6 @@ screen navigation():
         imagebutton auto "gui/nv/help_%s.png" xpos -11 ypos -251 focus_mask True action Help()
         imagebutton auto "gui/nv/quit_%s.png" xpos -312 ypos -123 focus_mask True action Quit(confirm=True)
 
-    frame:
-        style_group "gm_nav"
-        xalign .98
-        yalign .98
-
-        has vbox
 
 
 init -2:
@@ -260,61 +254,87 @@ init -2:
 
 screen file_picker():
 
-    frame:
-        style "file_picker_frame"
-
-        has vbox
+    add "gui/ui/SaveScreen.png" xalign 1.0 yalign 1.0
 
         # The buttons at the top allow the user to pick a
         # page of files.
-        hbox:
-            style_group "file_picker_nav"
+    hbox:
+        style_group "file_picker_nav"
+           
+        xalign 0
+        yalign 0
+        xpos 982
+        ypos 100            
 
-            textbutton _("Previous"):
-                action FilePagePrevious()
 
-            textbutton _("Auto"):
-                action FilePage("auto")
+        textbutton _("Auto"):
+            action FilePage("auto")
 
-            textbutton _("Quick"):
-                action FilePage("quick")
+        textbutton _("Quick"):
+            action FilePage("quick")
 
-            for i in range(1, 9):
-                textbutton str(i):
-                    action FilePage(i)
+        textbutton _("Previous"):
+            action FilePagePrevious()
 
-            textbutton _("Next"):
-                action FilePageNext()
+        for i in range(1, 9):
+            textbutton str(i):
+                action FilePage(i)
 
-        $ columns = 2
-        $ rows = 5
+        textbutton _("Next"):
+            action FilePageNext()
+
+    $ columns = 2
+    $ rows = 6
 
         # Display a grid of file slots.
-        grid columns rows:
-            transpose True
-            xfill True
-            style_group "file_picker"
+    grid columns rows:
+        xalign 0
+        yalign 0
+        xsize 1760
+        ysize 750
+        xpos 70
+        ypos 140
+
+        xfill True
+
+        style_group "file_picker"
 
             # Display ten file slots, numbered 1 - 10.
-            for i in range(1, columns * rows + 1):
+        for i in range(1, columns * rows + 1):
 
                 # Each file slot is a button.
-                button:
-                    action FileAction(i)
-                    xfill True
+            button:
+                action FileAction(i)
+                xfill True
 
-                    has hbox
+                xalign 0
+                yalign 0
+                xsize 670
+                ysize 100
+                xpos ((i*15)*(i%2))+((45+(i*15))*((i+1)%2))
+                ypos (i-((i+1)%2))*15
 
-                    # Add the screenshot.
-                    add FileScreenshot(i)
+                has hbox
 
-                    $ file_name = FileSlotName(i, columns * rows)
-                    $ file_time = FileTime(i, empty=_("Empty Slot."))
-                    $ save_name = FileSaveName(i)
+                add FileScreenshot(i)
 
-                    text "[file_name]. [file_time!t]\n[save_name!t]"
+                $ file_name = FileSlotName(i, columns * rows)
+                $ file_time = FileTime(i, empty=_("Empty Slot."))
+                $ save_name = FileSaveName(i)
 
-                    key "save_delete" action FileDelete(i)
+                text "[file_name]. [file_time!t]\n[save_name!t]"
+
+                key "save_delete" action FileDelete(i)
+
+### Menu Buttons For Save Screen ###
+    hbox:
+        style_group "save_navigation"
+
+        xalign 0
+        yalign 1.0
+
+ #       imagebutton auto "gui/nv/mm_%s.png" xpos 1430 ypos -50 focus_mask True action MainMenu()
+ #       imagebutton auto "gui/nv/rtn_%s.png" xpos 40 ypos -50 focus_mask True action Return()
 
 
 screen save():
