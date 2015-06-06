@@ -258,6 +258,22 @@ screen file_picker():
 
         # The buttons at the top allow the user to pick a
         # page of files.
+    
+    $ firstNum = 1379
+
+    imagebutton auto "gui/sv/auto_%s.png" xpos 735 ypos 20 focus_mask True action FilePage("auto")
+    imagebutton auto "gui/sv/quick_%s.png" xpos 896 ypos 20 focus_mask True action FilePage("quick")
+    imagebutton auto "gui/sv/prev_%s.png" xpos 1057 ypos 20 focus_mask True action FilePagePrevious()
+    imagebutton auto "gui/sv/next_%s.png" xpos 1218 ypos 20 focus_mask True action FilePageNext()
+
+    for i in range(1, 10):
+        imagebutton auto "gui/sv/" + str(i) +"_%s.png":
+            xpos (int(firstNum)+((i-1)*59)) 
+            ypos 20 
+            focus_mask True 
+            action FilePage(i)
+
+
     hbox:
         style_group "file_picker_nav"
            
@@ -267,21 +283,21 @@ screen file_picker():
         ypos 100            
 
 
-        textbutton _("Auto"):
-            action FilePage("auto")
+#        textbutton _("Auto"):
+ #           action FilePage("auto")
 
-        textbutton _("Quick"):
-            action FilePage("quick")
+#        textbutton _("Quick"):
+ #           action FilePage("quick")
 
-        textbutton _("Previous"):
-            action FilePagePrevious()
+ #       textbutton _("Previous"):
+  #          action FilePagePrevious()
 
-        for i in range(1, 9):
-            textbutton str(i):
+ #       for i in range(1, 9):
+  #          textbutton str(i):
                 action FilePage(i)
 
-        textbutton _("Next"):
-            action FilePageNext()
+   #     textbutton _("Next"):
+    #        action FilePageNext()
 
     $ columns = 2
     $ rows = 6
@@ -327,14 +343,10 @@ screen file_picker():
                 key "save_delete" action FileDelete(i)
 
 ### Menu Buttons For Save Screen ###
-    hbox:
-        style_group "save_navigation"
 
-        xalign 0
-        yalign 1.0
+    imagebutton auto "gui/nv/mm_%s.png" xpos 1260 ypos 969 focus_mask True action MainMenu()
+    imagebutton auto "gui/nv/rtn_%s.png" xpos 1571 ypos 969 focus_mask True action Return()
 
- #       imagebutton auto "gui/nv/mm_%s.png" xpos 1430 ypos -50 focus_mask True action MainMenu()
- #       imagebutton auto "gui/nv/rtn_%s.png" xpos 40 ypos -50 focus_mask True action Return()
 
 
 screen save():
@@ -342,16 +354,26 @@ screen save():
     # This ensures that any other menu screen is replaced.
     tag menu
 
-    use navigation
     use file_picker
+
+    hbox:
+        xpos 20
+        ypos 10
+        
+        text "SAVE GAME" font "LSANS.ttf" size 64 color "000000ff"
 
 screen load():
 
     # This ensures that any other menu screen is replaced.
     tag menu
 
-    use navigation
     use file_picker
+
+    hbox:
+        xpos 20
+        ypos 10
+        
+        text "LOAD GAME" font "LSANS.ttf" size 64 color "000000ff"
 
 init -2:
     style file_picker_frame is menu_frame

@@ -154,17 +154,17 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="11.313708"
-     inkscape:cx="1876.898"
-     inkscape:cy="136.65539"
+     inkscape:zoom="1.9999999"
+     inkscape:cx="1674.3446"
+     inkscape:cy="86.03878"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:object-paths="false"
      inkscape:object-nodes="false"
      inkscape:window-width="1920"
-     inkscape:window-height="1058"
-     inkscape:window-x="1912"
+     inkscape:window-height="1018"
+     inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1" />
   <metadata
@@ -186,7 +186,7 @@
      transform="translate(0,-796.36218)"
      style="display:inline">
     <rect
-       style="fill:#b8b8b8;fill-opacity:0.58510623;stroke:#000000;stroke-width:1.82823598;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       style="fill:#747474;fill-opacity:0.58431375;stroke:#000000;stroke-width:1.82823598000000010;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
        id="rect2985"
        width="1998.6667"
        height="336.05762"
@@ -220,7 +220,7 @@
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccc" />
     <rect
-       style="opacity:0.5;fill:#b8b8b8;fill-opacity:0.58431373;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-miterlimit:4;stroke-opacity:0.61702127;stroke-dasharray:none"
+       style="opacity:0.50000000000000000;fill:#747474;fill-opacity:0.58431375;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-miterlimit:4;stroke-opacity:0.61702126999999996;stroke-dasharray:none"
        id="rect3007"
        width="75"
        height="31"
@@ -245,7 +245,7 @@
          x="1953.9727"
          y="788.18018">SAVE</tspan></text>
     <rect
-       style="opacity:0.5;fill:#b8b8b8;fill-opacity:0.58431373;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-miterlimit:4;stroke-opacity:0.61702127;stroke-dasharray:none"
+       style="opacity:0.50000000000000000;fill:#747474;fill-opacity:0.58431375;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-miterlimit:4;stroke-opacity:0.61702126999999996;stroke-dasharray:none"
        id="rect3035"
        width="179"
        height="31"
@@ -256,21 +256,21 @@
        inkscape:export-ydpi="185.80646" />
     <text
        xml:space="preserve"
-       style="font-size:21.37604332px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="1749.6942"
-       y="905.9801"
+       style="font-size:22.03392029px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="1802.5013"
+       y="879.87341"
        id="text3013"
        sodipodi:linespacing="125%"
-       transform="scale(0.98895512,1.0111682)"
+       transform="scale(0.95942736,1.0422884)"
        inkscape:export-filename="E:\Hummingbird-VN-3.33\Art\Preferances Button.png"
        inkscape:export-xdpi="185.80646"
        inkscape:export-ydpi="185.80646"><tspan
          sodipodi:role="line"
-         x="1749.6942"
-         y="905.9801"
+         x="1802.5013"
+         y="879.87341"
          id="tspan3019">PREFERENCES</tspan></text>
     <rect
-       style="opacity:0.5;fill:#b8b8b8;fill-opacity:0.58431373;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-miterlimit:4;stroke-opacity:0.61702127;stroke-dasharray:none"
+       style="opacity:0.50000000000000000;fill:#747474;fill-opacity:0.58431375;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-miterlimit:4;stroke-opacity:0.61702126999999996;stroke-dasharray:none"
        id="rect3037"
        width="75"
        height="31"
@@ -295,7 +295,7 @@
          x="1704.3217"
          y="995.52057">QUIT</tspan></text>
     <rect
-       style="opacity:0.5;fill:#b8b8b8;fill-opacity:0.58431373;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-miterlimit:4;stroke-opacity:0.61702127;stroke-dasharray:none"
+       style="opacity:0.50000000000000000;fill:#747474;fill-opacity:0.58431375;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-miterlimit:4;stroke-opacity:0.61702126999999996;stroke-dasharray:none"
        id="rect3033"
        width="75"
        height="31"
