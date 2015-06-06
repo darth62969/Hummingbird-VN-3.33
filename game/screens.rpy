@@ -273,32 +273,6 @@ screen file_picker():
             focus_mask True 
             action FilePage(i)
 
-
-    hbox:
-        style_group "file_picker_nav"
-           
-        xalign 0
-        yalign 0
-        xpos 982
-        ypos 100            
-
-
-#        textbutton _("Auto"):
- #           action FilePage("auto")
-
-#        textbutton _("Quick"):
- #           action FilePage("quick")
-
- #       textbutton _("Previous"):
-  #          action FilePagePrevious()
-
- #       for i in range(1, 9):
-  #          textbutton str(i):
-                action FilePage(i)
-
-   #     textbutton _("Next"):
-    #        action FilePageNext()
-
     $ columns = 2
     $ rows = 6
 
@@ -308,8 +282,8 @@ screen file_picker():
         yalign 0
         xsize 1760
         ysize 750
-        xpos 70
-        ypos 140
+        xpos 68
+        ypos 139
 
         xfill True
 
@@ -321,14 +295,19 @@ screen file_picker():
                 # Each file slot is a button.
             button:
                 action FileAction(i)
+
                 xfill True
 
                 xalign 0
                 yalign 0
-                xsize 670
-                ysize 100
+                xsize 673
+                ysize 102
                 xpos ((i*15)*(i%2))+((45+(i*15))*((i+1)%2))
-                ypos (i-((i+1)%2))*15
+                ypos (i-((i+1)%2))*14
+
+                background Frame("gui/sv/SlotBG_idle.png", 4, 4, 4, 4)
+                idle_background Frame("gui/sv/SlotBG_hover.png", 4, 4, 4, 4)
+                hover_background Frame("gui/sv/SlotBG_idle.png", 4, 4, 4, 4)
 
                 has hbox
 
