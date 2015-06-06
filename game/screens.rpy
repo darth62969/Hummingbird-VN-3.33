@@ -381,10 +381,10 @@ screen preferences():
         draggable True
         xalign 0
         yalign 0
-        xsize 1100
-        ysize 881
-        xpos 100
-        ypos 100
+        xsize 1050
+        ysize 828
+        xpos 125
+        ypos 125
 
 
         grid 1 1:
@@ -395,118 +395,178 @@ screen preferences():
             vbox:
                 frame:
                     style_group "pref"
-                    has vbox
 
-                    label _("Display")
-                    textbutton _("Window") action Preference("display", "window")
-                    textbutton _("Fullscreen") action Preference("display", "fullscreen")
+                    hbox:
+                        text "Display" 
+                    hbox:
+                        xpos 475
+                        yalign 0.5
+                        textbutton _("Window"):
 
+                            action Preference("display", "window")
+
+                        textbutton _("Fullscreen"):
+
+                            action Preference("display", "fullscreen")
                 frame:
                     style_group "pref"
-                    has vbox
 
-                    label _("Transitions")
-                    textbutton _("All") action Preference("transitions", "all")
-                    textbutton _("None") action Preference("transitions", "none")
-
-                frame:
-                    style_group "pref"
-                    has vbox
-    
-                    label _("Text Speed")
-                    bar value Preference("text speed")
-    
-                frame:
-                    style_group "pref"
-                    has vbox
-    
-                    textbutton _("Joystick...") action Preference("joystick")
-    
-    
-                frame:
-                    style_group "pref"
-                    has vbox
-    
-                    label _("Skip")
-                    textbutton _("Seen Messages") action Preference("skip", "seen")
-                    textbutton _("All Messages") action Preference("skip", "all")
+                    hbox:
+                        text "Transitions"
+                    hbox:
+                        xpos 475
+                        yalign 0.5
+                        textbutton _("All") action Preference("transitions", "all")
+                        textbutton _("None") action Preference("transitions", "none")
 
                 frame:
                     style_group "pref"
-                    has vbox
-    
-                    textbutton _("Begin Skipping") action Skip()
-    
-                frame:
-                    style_group "pref"
-                    has vbox
-    
-                    label _("After Choices")
-                    textbutton _("Stop Skipping") action Preference("after choices", "stop")
-                    textbutton _("Keep Skipping") action Preference("after choices", "skip")
+
+                    hbox:
+                        text "Text Speed"
+                    hbox:
+                        xpos 475
+                        yalign 0.5
+                        bar value Preference("text speed")
     
                 frame:
                     style_group "pref"
-                    has vbox
+ 
+                    hbox:
+                        xpos 475
+                        yalign 0.5    
+                        textbutton _("Joystick...") action Preference("joystick")
     
-                    label _("Auto-Forward Time")
+    
+                frame:
+                    style_group "pref"
+
+                    hbox:
+                        text "Skip"
+                    hbox:
+                        xpos 475
+                        yalign 0.5
+                        textbutton _("Seen Messages") action Preference("skip", "seen")
+                        textbutton _("All Messages") action Preference("skip", "all")
+
+                frame:
+                    style_group "pref"
+
+                    hbox:
+                        xpos 475
+                        yalign 0.5    
+                        textbutton _("Begin Skipping") action Skip()
+    
+                frame:
+                    style_group "pref"
+
+                    hbox:
+                        text "After Choices"
+                    hbox:
+                        xpos 475
+                        yalign 0.5
+                        textbutton _("Stop Skipping") action Preference("after choices", "stop")
+                        textbutton _("Keep Skipping") action Preference("after choices", "skip")
+    
+                frame:
+                    style_group "pref"
+
+                    text "Auto-Forward Time"
+
                     bar value Preference("auto-forward time")
     
                     if config.has_voice:
-                        textbutton _("Wait for Voice") action Preference("wait for voice", "toggle")
+                        hbox:
+                            xpos 475
+                            yalign 0.5
+                            textbutton _("Wait for Voice") action Preference("wait for voice", "toggle")
 
                 frame:
                     style_group "pref"
-                    has vbox
-    
-                    label _("Music Volume")
-                    bar value Preference("music volume")
+
+                    hbox:    
+                        text "Music Volume"
+
+                    hbox:
+                        xpos 475
+                        yalign 0.5
+                        bar value Preference("music volume")
     
                 frame:
                     style_group "pref"
                     has vbox
+                    hbox:
+                        text "Sound Volume"
+                    hbox:
+                        xpos 475
+                        yalign 0.5
+                        bar value Preference("sound volume")
     
-                    label _("Sound Volume")
-                    bar value Preference("sound volume")
-    
-                    if config.sample_sound:
-                        textbutton _("Test"):
-                            action Play("sound", config.sample_sound)
-                            style "soundtest_button"
+                        if config.sample_sound:
+                            textbutton _("Test"):
+                                action Play("sound", config.sample_sound)
+                                style "soundtest_button"
     
                 if config.has_voice:
                     frame:
                         style_group "pref"
-                        has vbox
+
+                        hbox:
+                            text "Voice Volume"
+                        hbox:
+                            xpos 475
+                            yalign 0.5
+                            bar value Preference("voice volume")
     
-                        label _("Voice Volume")
-                        bar value Preference("voice volume")
-    
-                        textbutton _("Voice Sustain") action Preference("voice sustain", "toggle")
-                        if config.sample_voice:
-                            textbutton _("Test"):
-                                action Play("voice", config.sample_voice)
-                                style "soundtest_button"
+                            textbutton _("Voice Sustain") action Preference("voice sustain", "toggle")
+                            if config.sample_voice:
+                                textbutton _("Test"):
+                                    action Play("voice", config.sample_voice)
+                                    style "soundtest_button"
 
 
 
 
 init -2:
     style pref_frame:
+
+        background Frame("gui/ui/FrameBox.png", 4, 4, 4, 4)
         xfill True
-        xmargin 5
-        top_margin 5
+        xpadding 25
+        ypadding 25
+        ysize 120
+        xsize 1050
+        bottom_margin 20
+
 
     style pref_vbox:
         xfill True
 
+    style pref_lable:
+
+        yalign 0.5
+
+    style pref_text:
+
+        size 32
+        color "000000ff" 
+        yanchor 0.5
+        yalign 0.5 
+
     style pref_button:
-        size_group "pref"
-        xalign 1.0
+        xfill True
+        background Frame("gui/ui/FrameBox_hover.png", 4, 4, 4, 4)
+        idle_background Frame("gui/ui/FrameBox.png", 4, 4, 4, 4)
+        hover_background Frame("gui/ui/FrameBox_hover.png", 4, 4, 4, 4)
+        xalign 0
+
+        ysize 50
+        xsize 250
+        left_margin 25
 
     style pref_slider:
         xmaximum 192
-        xalign 1.0
+        xalign 0
 
     style soundtest_button:
         xalign 1.0
