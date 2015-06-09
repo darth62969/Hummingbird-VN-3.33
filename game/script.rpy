@@ -48,7 +48,7 @@ label start:
     
     "Yet despite the pure efficiency of death I wrought,{w} the ogres continuously poured into the small dungeon corridor."
     
-    h "{i}This is new. It’s just my luck some moron would spring a trap and flood the dungeon today.{i}"
+    h "{i}This is new. It’s just my luck some moron would spring a trap and flood the dungeon today.{/i}"
     
     "I closed my eyes and traced my fingers along my bow, feeling the intricate grain of the wood.{w} I took a deep breath, breathing in the rancid smell of dungeon air."
     
