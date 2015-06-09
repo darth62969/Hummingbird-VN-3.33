@@ -73,12 +73,12 @@ init -1 python hide:
         ## The background of the main menu. This can be a color
         ## beginning with '#', or an image filename. The latter
         ## should take up the full height and width of the screen.
-        mm_root = "#dcebff",
+        mm_root = "#00000000",
 
         ## The background of the game menu. This can be a color
         ## beginning with '#', or an image filename. The latter
         ## should take up the full height and width of the screen.
-        gm_root = "#dcebff",
+        gm_root = "#00000000",
 
         ## And we're done with the theme. The theme will customize
         ## various styles, so if we want to change them, we should

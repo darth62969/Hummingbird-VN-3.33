@@ -379,20 +379,22 @@ screen preferences():
 
     viewport id "pref_vp":
         draggable True
+        mousewheel True
         xalign 0
         yalign 0
         xsize 1050
         ysize 828
         xpos 125
         ypos 125
-
-
+        
+        
         grid 1 1:
             style_group "prefs"
             xfill True
 
 
             vbox:
+                spacing 20
                 frame:
                     style_group "pref"
 
@@ -471,15 +473,14 @@ screen preferences():
                 frame:
                     style_group "pref"
 
-                    text "Auto-Forward Time"
-
-                    bar value Preference("auto-forward time")
-    
-                    if config.has_voice:
-                        hbox:
-                            xpos 475
-                            yalign 0.5
-                            textbutton _("Wait for Voice") action Preference("wait for voice", "toggle")
+                    hbox:
+                        text "Auto-Forward Time"
+                    
+                    hbox:
+                        xpos 475
+                        yalign 0.5
+                        #bar value Preference("auto-forward time")
+                        textbutton _("Wait for Voice") action Preference("wait for voice", "toggle")
 
                 frame:
                     style_group "pref"
@@ -524,7 +525,28 @@ screen preferences():
                                     action Play("voice", config.sample_voice)
                                     style "soundtest_button"
 
-
+    vbar:
+        value YScrollValue("pref_vp")
+        
+        left_bar Frame("gui/ui/ScrollBarExternal.png", 2, 2, 2, 2)
+        right_bar Frame("gui/ui/ScrollBarExternal.png", 2, 2, 2, 2)
+        
+        left_gutter 0
+        right_gutter 0
+        bottom_gutter 0
+        top_gutter 0
+        
+        thumb_offset 0
+        
+        thumb Frame("gui/ui/ScrollBarInternal.png", 2, 2, 2, 2)
+        thumb_shadow Frame("gui/ui/ScrollBarInternal.png", 2, 2, 2, 2)
+        
+        bar_resizing False
+        
+        xsize 10
+        ysize 878
+        xpos 101
+        ypos 100
 
 
 init -2:
@@ -532,9 +554,7 @@ init -2:
 
         background Frame("gui/ui/FrameBox.png", 4, 4, 4, 4)
         xfill True
-        xpadding 25
-        ypadding 25
-        ysize 120
+        ysize 100
         xsize 1050
         bottom_margin 20
 
@@ -584,30 +604,29 @@ screen yesno_prompt(message, yes_action, no_action):
 
     window:
         style "gm_root"
-
+        
     frame:
-        style_group "yesno"
-
-        xfill True
-        xmargin .05
-        ypos .1
-        yanchor 0
-        ypadding .05
-
-        has vbox:
-            xalign .5
-            yalign .5
-            spacing 30
-
+        
+        background Image("gui/ui/YesNoFrame.png")
+        
+        xsize 960
+        ysize 360
+        xpos 490
+        ypos 180
+            
         label _(message):
             xalign 0.5
+            yalign 0.25
+            text_size 38
 
         hbox:
+
             xalign 0.5
+            ypos 252
             spacing 100
 
-            textbutton _("Yes") action yes_action
-            textbutton _("No") action no_action
+            imagebutton auto "gui/yn/yes_%s.png" focus_mask True action yes_action
+            imagebutton auto "gui/yn/no_%s.png" focus_mask True action no_action
 
     # Right-click and escape answer "no".
     key "game_menu" action no_action
@@ -617,8 +636,7 @@ init -2:
         size_group "yesno"
 
     style yesno_label_text:
-        text_align 0.5
-        layout "subtitle"
+        text_align 0.5 
 
 
 ##############################################################################
@@ -630,15 +648,21 @@ screen quick_menu():
 
     # Add an in-game quick menu.
     hbox:
-        style_group "quick"
-
-        xalign 1.0
+        xalign 0
         yalign 1.0
         
-        imagebutton auto "gui/qm/prefs_%s.png" xpos 207 ypos -127 focus_mask True action ShowMenu('preferences')
-        imagebutton auto "gui/qm/save_%s.png" xpos 130 ypos -205 focus_mask True action ShowMenu('save')
-        imagebutton auto "gui/qm/load_%s.png" xpos -50 ypos -205 focus_mask True action ShowMenu('load')
-        imagebutton auto "gui/qm/quit_%s.png" xpos -126 ypos -64 focus_mask True action Quit(confirm=True)
+        imagebutton auto "gui/qm/prefs_%s.png" xpos 1675 ypos -128 focus_mask True action ShowMenu('preferences')
+    hbox: 
+        xalign 0
+        yalign 1.0
+
+        imagebutton auto "gui/qm/save_%s.png" xpos 1805 ypos -198 focus_mask True action ShowMenu('save')
+        imagebutton auto "gui/qm/load_%s.png" xpos 1580 ypos -198 focus_mask True action ShowMenu('load')
+    hbox:
+        xalign 0
+        yalign 1.0
+
+        imagebutton auto "gui/qm/quit_%s.png" xpos 1700 ypos -58 focus_mask True action Quit(confirm=True)
 
         
 
