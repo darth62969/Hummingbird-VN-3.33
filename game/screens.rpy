@@ -182,20 +182,17 @@ screen main_menu():
     # The background of the main menu.
     window:
         style "mm_root"
+        background Image("gui/ui/MainMenu.png")
 
     # The main menu buttons.
-    frame:
-        style_group "mm"
-        xalign .98
-        yalign .98
+        xalign 0.0
+        yalign 0.0
 
-        has vbox
-
-        textbutton _("Start Game") action Start()
-        textbutton _("Load Game") action ShowMenu("load")
-        textbutton _("Preferences") action ShowMenu("preferences")
-        textbutton _("Help") action Help()
-        textbutton _("Quit") action Quit(confirm=False)
+        imagebutton auto "gui/mm/start_%s.png" xpos 1391 ypos 40 focus_mask True action Help()
+        imagebutton auto "gui/mm/load_%s.png" xpos 1391 ypos 215 focus_mask True action ShowMenu("load")
+        imagebutton auto "gui/mm/prefs_%s.png" xpos 1391 ypos 390 focus_mask True action ShowMenu('preferences')
+        imagebutton auto "gui/mm/help_%s.png" xpos 1391 ypos 565 focus_mask True action Help()
+        imagebutton auto "gui/mm/quit_%s.png" xpos 1391 ypos 740 focus_mask True action Quit(confirm=True)
 
 init -2:
 

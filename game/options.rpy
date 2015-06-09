@@ -58,13 +58,13 @@ init -1 python hide:
         disabled = "#404040",
 
         ## The color of disabled widget text.
-        disabled_text = "#c8c8c8",
+        disabled_text = "#c8c8c0",
 
         ## The color of informational labels.
         label = "#ffffff",
 
         ## The color of a frame containing widgets.
-        frame = "#6496c8",
+        frame = "#00000000",
 
         ## If this is True, the in-game window is rounded. If False,
         ## the in-game window is square.
