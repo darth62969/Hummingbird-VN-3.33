@@ -336,7 +336,7 @@ screen save():
         xpos 20
         ypos 10
         
-        text "SAVE GAME" font "gui/sv/LSANS.ttf" size 64 color "000000ff"
+        text "SAVE GAME" font "LSANS.ttf" size 64 color "000000ff"
 
 screen load():
 
@@ -349,7 +349,7 @@ screen load():
         xpos 20
         ypos 10
         
-        text "LOAD GAME" font "gui/sv/LSANS.ttf" size 64 color "000000ff"
+        text "LOAD GAME" font "LSANS.ttf" size 64 color "000000ff"
 
 init -2:
     style file_picker_frame is menu_frame
