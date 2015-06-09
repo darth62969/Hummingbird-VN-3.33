@@ -14,7 +14,7 @@
    id="svg3837"
    version="1.1"
    inkscape:version="0.48.5 r10040"
-   inkscape:export-filename="E:\Hummingbird-VN-3.33\Name Box-Test.png"
+   inkscape:export-filename="E:\Hummingbird-VN-3.33\game\gui\ui\namebox.png"
    inkscape:export-xdpi="185.80646"
    inkscape:export-ydpi="185.80646"
    sodipodi:docname="Name Box Test.svg">
@@ -94,14 +94,14 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="5.6568542"
-     inkscape:cx="223.86592"
+     inkscape:cx="196.28876"
      inkscape:cy="12.995957"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1920"
-     inkscape:window-height="1058"
-     inkscape:window-x="1912"
+     inkscape:window-height="1018"
+     inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1" />
   <metadata
@@ -112,7 +112,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -122,7 +122,7 @@
      id="layer1"
      transform="translate(0,-988.36218)">
     <rect
-       style="fill:#b8b8b8;fill-opacity:0.53191489;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-opacity:0.61702126000000002;stroke-dasharray:none;opacity:1"
+       style="fill:#747474;fill-opacity:0.58431375;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-opacity:0.61702126000000002;stroke-dasharray:none;opacity:1"
        id="rect3845"
        width="253.49345"
        height="61.49345"

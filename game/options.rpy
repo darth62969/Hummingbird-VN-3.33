@@ -152,7 +152,7 @@ init -1 python hide:
 
     ## The file containing the default font.
 
-    # style.default.font = "DejaVuSans.ttf"
+    style.default.font = "LSANS.ttf"
 
     ## The default size of text.
 
@@ -220,7 +220,7 @@ init -1 python hide:
     config.exit_transition = None
 
     ## Used between screens of the game menu.
-    config.intra_transition = None
+    config.intra_transition = dissolve
 
     ## Used when entering the game menu from the main menu.
     config.main_game_transition = None

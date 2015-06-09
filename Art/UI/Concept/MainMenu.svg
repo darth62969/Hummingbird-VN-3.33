@@ -16,7 +16,7 @@
    version="1.1"
    inkscape:version="0.48.5 r10040"
    sodipodi:docname="MainMenu.svg"
-   inkscape:export-filename="E:\Hummingbird-VN-3.33\Art\UI\Concept\MainMenu.png"
+   inkscape:export-filename="E:\Hummingbird-VN-3.33\game\gui\ui\MainMenu.png"
    inkscape:export-xdpi="90"
    inkscape:export-ydpi="90">
   <defs
@@ -71,7 +71,7 @@
      inkscape:pageshadow="2"
      inkscape:zoom="0.64"
      inkscape:cx="740.58258"
-     inkscape:cy="579.40557"
+     inkscape:cy="454.40557"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
