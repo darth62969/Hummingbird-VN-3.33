@@ -188,7 +188,7 @@ screen main_menu():
         xalign 0.0
         yalign 0.0
 
-        imagebutton auto "gui/mm/start_%s.png" xpos 1391 ypos 40 focus_mask True action Help()
+        imagebutton auto "gui/mm/start_%s.png" xpos 1391 ypos 40 focus_mask True action Start()
         imagebutton auto "gui/mm/load_%s.png" xpos 1391 ypos 215 focus_mask True action ShowMenu("load")
         imagebutton auto "gui/mm/prefs_%s.png" xpos 1391 ypos 390 focus_mask True action ShowMenu('preferences')
         imagebutton auto "gui/mm/help_%s.png" xpos 1391 ypos 565 focus_mask True action Help()
