@@ -396,6 +396,7 @@ screen preferences():
                     style_group "pref"
 
                     hbox:
+                        yalign 0.5
                         text "Display" 
                     hbox:
                         xpos 475
@@ -411,6 +412,7 @@ screen preferences():
                     style_group "pref"
 
                     hbox:
+                        yalign 0.5
                         text "Transitions"
                     hbox:
                         xpos 475
@@ -422,6 +424,7 @@ screen preferences():
                     style_group "pref"
 
                     hbox:
+                        yalign 0.5
                         text "Text Speed"
                     hbox:
                         xpos 475
@@ -441,6 +444,7 @@ screen preferences():
                     style_group "pref"
 
                     hbox:
+                        yalign 0.5
                         text "Skip"
                     hbox:
                         xpos 475
@@ -460,6 +464,7 @@ screen preferences():
                     style_group "pref"
 
                     hbox:
+                        yalign 0.5
                         text "After Choices"
                     hbox:
                         xpos 475
@@ -471,29 +476,24 @@ screen preferences():
                     style_group "pref"
 
                     hbox:
-                        text "Auto-Forward Time"
-                    
-                    hbox:
-                        xpos 475
                         yalign 0.5
-                        #bar value Preference("auto-forward time")
+                        text "Auto-Forward Time"
+                        bar value Preference("auto-forward time")
                         textbutton _("Wait for Voice") action Preference("wait for voice", "toggle")
 
                 frame:
                     style_group "pref"
 
-                    hbox:    
-                        text "Music Volume"
-
                     hbox:
-                        xpos 475
                         yalign 0.5
+                        text "Music Volume"
                         bar value Preference("music volume")
     
                 frame:
                     style_group "pref"
                     has vbox
                     hbox:
+                        yalign 0.5
                         text "Sound Volume"
                     hbox:
                         xpos 475
@@ -510,6 +510,7 @@ screen preferences():
                         style_group "pref"
 
                         hbox:
+                            yalign 0.5
                             text "Voice Volume"
                         hbox:
                             xpos 475
@@ -549,11 +550,10 @@ screen preferences():
 init -2:
     style pref_frame:
 
-        background Frame("gui/ui/FrameBox.png", 4, 4, 4, 4)
+        background Frame("gui/ui/FrameBox.png", 2, 2, 2, 2)
         xfill True
         ysize 100
         xsize 1050
-        bottom_margin 20
 
 
     style pref_vbox:
