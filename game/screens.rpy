@@ -427,7 +427,7 @@ screen preferences():
                         yalign 0.5
                         text "Text Speed"
                     hbox:
-                        xpos 475
+                        xpos 500
                         yalign 0.5
                         bar value Preference("text speed")
     
@@ -582,9 +582,22 @@ init -2:
         left_margin 25
 
     style pref_slider:
-        xmaximum 192
-        xalign 0
+    
+        left_bar Frame("gui/ui/ScrollBarInternal.png", 2, 2, 2, 2)
+        right_bar Frame("gui/ui/ScrollBarExternal.png", 2, 2, 2, 2)
+        
+        left_gutter 0
+        right_gutter 0
+        bottom_gutter 0
+        top_gutter 0
+        
+        thumb_offset 0
+        
+        thumb Image("gui/ui/SliderThing.png")
+        thumb_shadow Frame("gui/ui/ScrollBarInternal.png", 2, 2, 2, 2)
 
+        xsize 475
+        
     style soundtest_button:
         xalign 1.0
 
