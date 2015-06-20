@@ -394,15 +394,13 @@ screen preferences():
         
         
         grid 1 1:
-            style_group "prefs"
+            style_group "pref"
             xfill True
 
 
             vbox:
                 spacing 20
                 frame:
-                    style_group "pref"
-
                     hbox:
                         yalign 0.5
                         xpos 20
@@ -418,8 +416,6 @@ screen preferences():
 
                             action Preference("display", "fullscreen")
                 frame:
-                    style_group "pref"
-
                     hbox:
                         xpos 20
                         yalign 0.5
@@ -431,8 +427,6 @@ screen preferences():
                         textbutton _("None") action Preference("transitions", "none")
 
                 frame:
-                    style_group "pref"
-
                     hbox:
                         xpos 20
                         yalign 0.5
@@ -443,8 +437,6 @@ screen preferences():
                         bar value Preference("text speed")
     
                 frame:
-                    style_group "pref"
- 
                     hbox:
                         xpos 475
                         yalign 0.5    
@@ -452,8 +444,6 @@ screen preferences():
     
     
                 frame:
-                    style_group "pref"
-
                     hbox:
                         xpos 20
                         yalign 0.5
@@ -465,16 +455,12 @@ screen preferences():
                         textbutton _("All Messages") action Preference("skip", "all")
 
                 frame:
-                    style_group "pref"
-
                     hbox:
                         xpos 475
                         yalign 0.5    
                         textbutton _("Begin Skipping") action Skip()
     
                 frame:
-                    style_group "pref"
-
                     hbox:
                         xpos 20
                         yalign 0.5
@@ -486,8 +472,6 @@ screen preferences():
                         textbutton _("Keep Skipping") action Preference("after choices", "skip")
     
                 frame:
-                    style_group "pref"
-
                     hbox:
                         xpos 20
                         yalign 0.5
@@ -501,8 +485,6 @@ screen preferences():
                             xsize 250
 
                 frame:
-                    style_group "pref"
-
                     hbox:
                         xpos 20
                         yalign 0.5
@@ -510,7 +492,6 @@ screen preferences():
                         bar value Preference("music volume")
     
                 frame:
-                    style_group "pref"
                     hbox:
                         xpos 20
                         yalign 0.5
@@ -524,8 +505,6 @@ screen preferences():
     
                 if config.has_voice:
                     frame:
-                        style_group "pref"
-
                         hbox:
                             xpos 20
                             yalign 0.5
@@ -660,8 +639,6 @@ screen help ():
             vbox:
                 spacing 20
                 frame:
-                    style_group "help"
-
                     hbox:
                         yalign 0.5
                         xpos 20
@@ -674,8 +651,6 @@ screen help ():
         
 
                 frame:
-                    style_group "help"
-
                     hbox:
                         yalign 0.5
                         xpos 20
@@ -686,8 +661,6 @@ screen help ():
                         xoffset -20
                         text "Take screenshot" text_align 1.0 
                 frame:
-                    style_group "help"
-
                     hbox:
                         yalign 0.5
                         xpos 20
@@ -698,8 +671,6 @@ screen help ():
                         xoffset -20
                         text "Delete selected save" text_align 1.0
                 frame:
-                    style_group "help"
-
                     hbox:
                         yalign 0.5
                         xpos 20
@@ -710,8 +681,6 @@ screen help ():
                         xoffset -20
                         text "Fullscreen" text_align 1.0
                 frame:
-                    style_group "help"
-
                     hbox:
                         yalign 0.5
                         xpos 20
@@ -722,8 +691,6 @@ screen help ():
                         xoffset -20
                         text "Auto advance" text_align 1.0
                 frame:
-                    style_group "help"
-
                     hbox:
                         yalign 0.5
                         xpos 20
@@ -734,8 +701,6 @@ screen help ():
                         xoffset -20
                         text "Rewind"  text_align 1.0
                 frame:
-                    style_group "help"
-
                     hbox:
                         yalign 0.5
                         xpos 20
@@ -746,8 +711,6 @@ screen help ():
                         xoffset -20
                         text "Forward" text_align 1.0
                 frame:
-                    style_group "help"
-
                     hbox:
                         yalign 0.5
                         xpos 20
@@ -758,8 +721,6 @@ screen help ():
                         xoffset -20
                         text "Hide text" text_align 1.0
                 frame:
-                    style_group "help"
-
                     hbox:
                         yalign 0.5
                         xpos 20
@@ -770,8 +731,6 @@ screen help ():
                         xoffset -20
                         text "Select menu choices" text_align 1.0
                 frame:
-                    style_group "help"
-
                     hbox:
                         yalign 0.5
                         xpos 20
@@ -782,8 +741,6 @@ screen help ():
                         xoffset -20
                         text "Toggle skipping" text_align 1.0
                 frame:
-                    style_group "help"
-
                     hbox:
                         xpos 350
                         yalign 0.5
