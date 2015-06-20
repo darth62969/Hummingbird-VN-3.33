@@ -402,12 +402,11 @@ screen preferences():
                 spacing 20
                 frame:
                     hbox:
-                        yalign 0.5
-                        xpos 20
+                        style_group "pref_left"
                         text "Display" 
                     hbox:
+                        style_group "pref_right"
                         xpos 475
-                        yalign 0.5
                         textbutton _("Window"):
 
                             action Preference("display", "window")
@@ -417,64 +416,58 @@ screen preferences():
                             action Preference("display", "fullscreen")
                 frame:
                     hbox:
-                        xpos 20
-                        yalign 0.5
+                        style_group "pref_left"
                         text "Transitions"
                     hbox:
+                        style_group "pref_right"
                         xpos 475
-                        yalign 0.5
                         textbutton _("All") action Preference("transitions", "all")
                         textbutton _("None") action Preference("transitions", "none")
 
                 frame:
                     hbox:
-                        xpos 20
-                        yalign 0.5
+                        style_group "pref_left"
                         text "Text Speed"
                     hbox:
+                        style_group "pref_right"
                         xpos 500
-                        yalign 0.5
                         bar value Preference("text speed")
     
                 frame:
                     hbox:
+                        style_group "pref_right"
                         xpos 475
-                        yalign 0.5    
                         textbutton _("Joystick...") action Preference("joystick")
-    
     
                 frame:
                     hbox:
-                        xpos 20
-                        yalign 0.5
+                        style_group "pref_left"
                         text "Skip"
                     hbox:
+                        style_group "pref_right"
                         xpos 475
-                        yalign 0.5
                         textbutton _("Seen Messages") action Preference("skip", "seen")
                         textbutton _("All Messages") action Preference("skip", "all")
 
                 frame:
                     hbox:
+                        style_group "pref_right"
                         xpos 475
-                        yalign 0.5    
                         textbutton _("Begin Skipping") action Skip()
     
                 frame:
                     hbox:
-                        xpos 20
-                        yalign 0.5
+                        style_group "pref_left"
                         text "After Choices"
                     hbox:
+                        style_group "pref_right"
                         xpos 475
-                        yalign 0.5
                         textbutton _("Stop Skipping") action Preference("after choices", "stop")
                         textbutton _("Keep Skipping") action Preference("after choices", "skip")
     
                 frame:
                     hbox:
-                        xpos 20
-                        yalign 0.5
+                        style_group "pref_left"
                         text "Auto-Forward Time"
                         textbutton _("Wait for Voice"):
                             action Preference("wait for voice", "toggle")
@@ -486,15 +479,13 @@ screen preferences():
 
                 frame:
                     hbox:
-                        xpos 20
-                        yalign 0.5
+                        style_group "pref_left"
                         text "Music Volume"
                         bar value Preference("music volume")
     
                 frame:
                     hbox:
-                        xpos 20
-                        yalign 0.5
+                        style_group "pref_left"
                         text "Sound Volume"
                         bar value Preference("sound volume")
     
@@ -506,12 +497,11 @@ screen preferences():
                 if config.has_voice:
                     frame:
                         hbox:
-                            xpos 20
-                            yalign 0.5
+                            style_group "pref_left"
                             text "Voice Volume"
                         hbox:
+                            style_group "pref_right"
                             xpos 475
-                            yalign 0.5
                             bar value Preference("voice volume")
     
                             textbutton _("Voice Sustain") action Preference("voice sustain", "toggle")
@@ -551,6 +541,43 @@ init -2:
         ysize 100
         xsize 1050
 
+    style pref_left_hbox:
+        xpos 20
+        yalign 0.5
+    style pref_left_button:
+        background Frame("gui/ui/FrameBox_hover.png", 4, 4, 4, 4)
+        hover_background Frame("gui/ui/FrameBox_hover.png", 4, 4, 4, 4)
+        idle_background Frame("gui/ui/FrameBox.png", 4, 4, 4, 4)
+        left_margin 25
+        xalign 0
+        xfill True
+        xsize 250
+        ysize 50
+    style pref_left_text:
+        color "000000ff"
+
+    style pref_right_hbox:
+        yalign 0.5
+    style pref_right_button:
+        background Frame("gui/ui/FrameBox_hover.png", 4, 4, 4, 4)
+        hover_background Frame("gui/ui/FrameBox_hover.png", 4, 4, 4, 4)
+        idle_background Frame("gui/ui/FrameBox.png", 4, 4, 4, 4)
+        left_margin 25
+        xalign 0
+        xfill True
+        xsize 250
+        ysize 50
+    style pref_right_slider:
+        left_bar Frame("gui/ui/ScrollBarInternal.png", 2, 2, 2, 2)
+        right_bar Frame("gui/ui/ScrollBarExternal.png", 2, 2, 2, 2)
+        left_gutter 0
+        right_gutter 0
+        bottom_gutter 0
+        top_gutter 0
+        thumb_offset 0
+        thumb Image("gui/ui/SliderThing.png")
+        thumb_shadow Frame("gui/ui/ScrollBarInternal.png", 2, 2, 2, 2)
+        xsize 470
 
     style pref_vbox:
         xfill True
@@ -559,41 +586,6 @@ init -2:
 
         yalign 0.5
 
-    style pref_text:
-
-        size 32
-        color "000000ff" 
-        yanchor 0.5
-        yalign 0.5 
-
-    style pref_button:
-        xfill True
-        background Frame("gui/ui/FrameBox_hover.png", 4, 4, 4, 4)
-        idle_background Frame("gui/ui/FrameBox.png", 4, 4, 4, 4)
-        hover_background Frame("gui/ui/FrameBox_hover.png", 4, 4, 4, 4)
-        xalign 0
-
-        ysize 50
-        xsize 250
-        left_margin 25
-
-    style pref_slider:
-    
-        left_bar Frame("gui/ui/ScrollBarInternal.png", 2, 2, 2, 2)
-        right_bar Frame("gui/ui/ScrollBarExternal.png", 2, 2, 2, 2)
-        
-        left_gutter 0
-        right_gutter 0
-        bottom_gutter 0
-        top_gutter 0
-        
-        thumb_offset 0
-        
-        thumb Image("gui/ui/SliderThing.png")
-        thumb_shadow Frame("gui/ui/ScrollBarInternal.png", 2, 2, 2, 2)
-
-        xsize 470
-        
     style soundtest_button:
         xalign 1.0
 
@@ -640,110 +632,79 @@ screen help ():
                 spacing 20
                 frame:
                     hbox:
-                        yalign 0.5
-                        xpos 20
-                        text "Left click, Enter, Space" text_align 0.0
+                        style_group "help_right"
+                        text "Left click, Enter, Space"
                     hbox:
-                        yalign 0.5
-                        xalign 1.0
-                        xoffset -20
-                        text "Advance text" text_align 1.0
+                        style_group "help_left"
+                        text "Advance text"
         
 
                 frame:
                     hbox:
-                        yalign 0.5
-                        xpos 20
-                        text "S" text_align 0.0 
+                        style_group "help_right"
+                        text "S"
                     hbox:
-                        yalign 0.5
-                        xalign 1.0
-                        xoffset -20
-                        text "Take screenshot" text_align 1.0 
+                        style_group "help_left"
+                        text "Take screenshot"
                 frame:
                     hbox:
-                        yalign 0.5
-                        xpos 20
-                        text "Delete" text_align 0.0
+                        style_group "help_right"
+                        text "Delete"
                     hbox:
-                        yalign 0.5
-                        xalign 1.0
-                        xoffset -20
-                        text "Delete selected save" text_align 1.0
+                        style_group "help_left"
+                        text "Delete selected save"
                 frame:
                     hbox:
-                        yalign 0.5
-                        xpos 20
-                        text "F" text_align 0.0
+                        style_group "help_right"
+                        text "F"
                     hbox:
-                        yalign 0.5
-                        xalign 1.0
-                        xoffset -20
-                        text "Fullscreen" text_align 1.0
+                        style_group "help_left"
+                        text "Fullscreen"
                 frame:
                     hbox:
-                        yalign 0.5
-                        xpos 20
-                        text "A" text_align 0.0
+                        style_group "help_right"
+                        text "A"
                     hbox:
-                        yalign 0.5
-                        xalign 1.0
-                        xoffset -20
-                        text "Auto advance" text_align 1.0
+                        style_group "help_left"
+                        text "Auto advance"
                 frame:
                     hbox:
-                        yalign 0.5
-                        xpos 20
-                        text "Mouse wheel up" text_align 0.0
+                        style_group "help_right"
+                        text "Mouse wheel up"
                     hbox:
-                        yalign 0.5
-                        xalign 1.0
-                        xoffset -20
-                        text "Rewind"  text_align 1.0
+                        style_group "help_left"
+                        text "Rewind"
                 frame:
                     hbox:
-                        yalign 0.5
-                        xpos 20
-                        text "Mouse wheel down" text_align 0.0
+                        style_group "help_right"
+                        text "Mouse wheel down"
                     hbox:
-                        yalign 0.5
-                        xalign 1.0
-                        xoffset -20
-                        text "Forward" text_align 1.0
+                        style_group "help_left"
+                        text "Forward"
                 frame:
                     hbox:
-                        yalign 0.5
-                        xpos 20
-                        text "H" text_align 0.0
+                        style_group "help_right"
+                        text "H"
                     hbox:
-                        yalign 0.5
-                        xalign 1.0
-                        xoffset -20
-                        text "Hide text" text_align 1.0
+                        style_group "help_left"
+                        text "Hide text"
                 frame:
                     hbox:
-                        yalign 0.5
-                        xpos 20
-                        text "Arrow keys" text_align 0.0
+                        style_group "help_right"
+                        text "Arrow keys"
                     hbox:
-                        yalign 0.5
-                        xalign 1.0
-                        xoffset -20
-                        text "Select menu choices" text_align 1.0
+                        style_group "help_left"
+                        text "Select menu choices"
                 frame:
                     hbox:
-                        yalign 0.5
-                        xpos 20
-                        text "Tab" text_align 0.0
+                        style_group "help_right"
+                        text "Tab"
                     hbox:
-                        yalign 0.5
-                        xalign 1.0
-                        xoffset -20
-                        text "Toggle skipping" text_align 1.0
+                        style_group "help_left"
+                        text "Toggle skipping"
                 frame:
                     hbox:
                         xpos 350
-                        yalign 0.5
                         textbutton ("CREDITS") action ShowMenu("Credits")
     
     vbar:
@@ -778,6 +739,20 @@ init -2:
         ysize 100
         xsize 1050
 
+    style help_left_hbox:
+        xalign 1.0
+        xoffset -20
+        yalign 0.5
+    style help_left_text:
+        color "000000ff"
+        text_align 1.0
+
+    style help_right_hbox:
+        xpos 20
+        yalign 0.5
+    style help_right_text:
+        color "000000ff"
+        text_align 0.0
 
     style help_vbox:
         xfill True
@@ -785,13 +760,6 @@ init -2:
     style help_lable:
 
         yalign 0.5
-
-    style help_text:
-
-        size 32
-        color "000000ff" 
-        yanchor 0.5
-        yalign 0.5 
 
     style help_button:
         xfill True
