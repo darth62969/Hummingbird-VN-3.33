@@ -226,7 +226,7 @@ screen navigation():
         imagebutton auto "gui/nv/save_%s.png" xpos 892 ypos -635 focus_mask True action ShowMenu('save')
         imagebutton auto "gui/nv/load_%s.png" xpos 591 ypos -507 focus_mask True action ShowMenu("load")
         imagebutton auto "gui/nv/mm_%s.png" xpos 290 ypos -379 focus_mask True action MainMenu()
-        imagebutton auto "gui/nv/help_%s.png" xpos -11 ypos -251 focus_mask True action Help()
+        imagebutton auto "gui/nv/help_%s.png" xpos -11 ypos -251 focus_mask True action ShowMenu ("help")
         imagebutton auto "gui/nv/quit_%s.png" xpos -312 ypos -123 focus_mask True action Quit(confirm=True)
 
 
@@ -397,6 +397,7 @@ screen preferences():
 
                     hbox:
                         yalign 0.5
+                        xpos 20
                         text "Display" 
                     hbox:
                         xpos 475
@@ -412,6 +413,7 @@ screen preferences():
                     style_group "pref"
 
                     hbox:
+                        xpos 20
                         yalign 0.5
                         text "Transitions"
                     hbox:
@@ -424,6 +426,7 @@ screen preferences():
                     style_group "pref"
 
                     hbox:
+                        xpos 20
                         yalign 0.5
                         text "Text Speed"
                     hbox:
@@ -444,6 +447,7 @@ screen preferences():
                     style_group "pref"
 
                     hbox:
+                        xpos 20
                         yalign 0.5
                         text "Skip"
                     hbox:
@@ -464,6 +468,7 @@ screen preferences():
                     style_group "pref"
 
                     hbox:
+                        xpos 20
                         yalign 0.5
                         text "After Choices"
                     hbox:
@@ -476,28 +481,32 @@ screen preferences():
                     style_group "pref"
 
                     hbox:
+                        xpos 20
                         yalign 0.5
                         text "Auto-Forward Time"
-                        bar value Preference("auto-forward time")
-                        textbutton _("Wait for Voice") action Preference("wait for voice", "toggle")
+                        textbutton _("Wait for Voice"):
+                            action Preference("wait for voice", "toggle")
+                            xpos 155
+                        bar:
+                            value Preference("auto-forward time") 
+                            xpos 475
+                            xsize 250
 
                 frame:
                     style_group "pref"
 
                     hbox:
+                        xpos 20
                         yalign 0.5
                         text "Music Volume"
                         bar value Preference("music volume")
     
                 frame:
                     style_group "pref"
-                    has vbox
                     hbox:
+                        xpos 20
                         yalign 0.5
                         text "Sound Volume"
-                    hbox:
-                        xpos 475
-                        yalign 0.5
                         bar value Preference("sound volume")
     
                         if config.sample_sound:
@@ -510,6 +519,7 @@ screen preferences():
                         style_group "pref"
 
                         hbox:
+                            xpos 20
                             yalign 0.5
                             text "Voice Volume"
                         hbox:
@@ -545,7 +555,6 @@ screen preferences():
         ysize 878
         xpos 101
         ypos 100
-
 
 init -2:
     style pref_frame:
@@ -596,12 +605,178 @@ init -2:
         thumb Image("gui/ui/SliderThing.png")
         thumb_shadow Frame("gui/ui/ScrollBarInternal.png", 2, 2, 2, 2)
 
-        xsize 475
+        xsize 470
         
     style soundtest_button:
         xalign 1.0
 
+##############################################################################
+# Help
+#
+# Screen that allows the user to view the help menu and credits.
+# By, Brunn08
+        
+screen help ():
+    
+    tag menu
+    
+    add "gui/ui/Help Screen.png" xalign 1.0 yalign 1.0
+    
+# Include the navigation.
+    use navigation
+    
+    viewport id "help_vp":
+        draggable True
+        mousewheel True
+        xalign 0
+        yalign 0
+        xsize 1050
+        ysize 828
+        xpos 125
+        ypos 125
+        
+        
+        grid 1 1:
+            style_group "help"
+            xfill True
 
+
+            vbox:
+                spacing 20
+                frame:
+                    style_group "help"
+
+                    hbox:
+                        yalign 0.5
+                        text "Left click,Enter, space                           Advance trough the game" 
+        
+
+                frame:
+                    style_group "help"
+
+                    hbox:
+                        yalign 0.5
+                        text "          S                                                 Take screenshot"
+                frame:
+                    style_group "help"
+
+                    hbox:
+                        yalign 0.5
+                        text "Delete                                                 Deletes the selected save"
+                frame:
+                    style_group "help"
+
+                    hbox:
+                        yalign 0.5
+                        text "          F                                                 Fullscreen/widescreen"
+                frame:
+                    style_group "help"
+
+                    hbox:
+                        yalign 0.5
+                        text "          A                                                 Auto-mode"
+                frame:
+                    style_group "help"
+
+                    hbox:
+                        yalign 0.5
+                        text "Mouse wheel up                                  Rollback trough the game"
+                frame:
+                    style_group "help"
+
+                    hbox:
+                        yalign 0.5
+                        text "Mouse wheel down                              Forwards trough the game"
+                frame:
+                    style_group "help"
+
+                    hbox:
+                        yalign 0.5
+                        text "          H                                                Hide the text window"
+                frame:
+                    style_group "help"
+
+                    hbox:
+                        yalign 0.5
+                        text "Arrow keys                                            Select menu choices"
+                frame:
+                    style_group "help"
+
+                    hbox:
+                        yalign 0.5
+                        text "TAB                                                      Toggles skipping"
+                frame:
+                    style_group "help"
+
+                    hbox:
+                        xpos 350
+                        yalign 0.5
+                        textbutton ("CREDITS") action ShowMenu("Credits")
+    vbar:
+        value YScrollValue("help_vp")
+        
+        left_bar Frame("gui/ui/ScrollBarExternal.png", 2, 2, 2, 2)
+        right_bar Frame("gui/ui/ScrollBarExternal.png", 2, 2, 2, 2)
+        
+        left_gutter 0
+        right_gutter 0
+        bottom_gutter 0
+        top_gutter 0
+        
+        thumb_offset 0
+        
+        thumb Frame("gui/ui/ScrollBarInternal.png", 2, 2, 2, 2)
+        thumb_shadow Frame("gui/ui/ScrollBarInternal.png", 2, 2, 2, 2)
+        
+        bar_resizing False
+        
+        xsize 10
+        ysize 878
+        xpos 101
+        ypos 100
+
+
+init -2:
+    style help_frame:
+
+        background Frame("gui/ui/FrameBox.png", 2, 2, 2, 2)
+        xfill True
+        ysize 100
+        xsize 1050
+
+
+    style help_vbox:
+        xfill True
+
+    style help_lable:
+
+        yalign 0.5
+
+    style help_text:
+
+        size 32
+        color "000000ff" 
+        yanchor 0.5
+        yalign 0.5 
+
+    style help_button:
+        xfill True
+        background Frame("gui/ui/FrameBox_hover.png", 4, 4, 4, 4)
+        idle_background Frame("gui/ui/FrameBox.png", 4, 4, 4, 4)
+        hover_background Frame("gui/ui/FrameBox_hover.png", 4, 4, 4, 4)
+        xalign 0
+
+        ysize 50
+        xsize 250
+        left_margin 25
+
+    style help_slider:
+        xmaximum 192
+        xalign 0
+
+    style soundtest_button:
+        xalign 1.0
+        
 ##############################################################################
 # Yes/No Prompt
 #
