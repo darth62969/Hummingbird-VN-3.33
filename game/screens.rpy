@@ -191,7 +191,7 @@ screen main_menu():
         imagebutton auto "gui/mm/start_%s.png" xpos 1391 ypos 40 focus_mask True action Start()
         imagebutton auto "gui/mm/load_%s.png" xpos 1391 ypos 215 focus_mask True action ShowMenu("load")
         imagebutton auto "gui/mm/prefs_%s.png" xpos 1391 ypos 390 focus_mask True action ShowMenu('preferences')
-        imagebutton auto "gui/mm/help_%s.png" xpos 1391 ypos 565 focus_mask True action Help()
+        imagebutton auto "gui/mm/help_%s.png" xpos 1391 ypos 565 focus_mask True action ShowMenu ("help")
         imagebutton auto "gui/mm/quit_%s.png" xpos 1391 ypos 740 focus_mask True action Quit(confirm=True)
 
 init -2:
@@ -368,12 +368,20 @@ init -2:
 screen preferences():
 
     tag menu
-    
-    add "gui/ui/Preferences Screen.png" xalign 1.0 yalign 1.0
+
+    add "gui/ui/MenuScreen.png" xalign 1.0 yalign 1.0
     
 # Include the navigation.
     use navigation
 
+# Window Title    
+    hbox:
+        xpos 100
+        ypos 10
+        
+        text "PREFERENCES" size 64 color "000000ff"
+
+ # Preferances Menu
     viewport id "pref_vp":
         draggable True
         mousewheel True
@@ -620,14 +628,22 @@ screen help ():
     
     tag menu
     
-    add "gui/ui/Help Screen.png" xalign 1.0 yalign 1.0
+    add "gui/ui/MenuScreen.png" xalign 1.0 yalign 1.0
     
 # Include the navigation.
     use navigation
-    
+
+# Window Title    
+    hbox:
+        xpos 100
+        ypos 10
+        
+        text "HELP" size 64 color "000000ff"
+# Help Window    
     viewport id "help_vp":
         draggable True
         mousewheel True
+        child_size (1050, 6000)
         xalign 0
         yalign 0
         xsize 1050
@@ -648,7 +664,13 @@ screen help ():
 
                     hbox:
                         yalign 0.5
-                        text "Left click,Enter, space                           Advance trough the game" 
+                        xpos 20
+                        text "Left click,Enter, space" text_align 0.0
+                    hbox:
+                        yalign 0.5
+                        xalign 1.0
+                        xoffset -20
+                        text "Advance trough the game" text_align 1.0
         
 
                 frame:
@@ -656,55 +678,109 @@ screen help ():
 
                     hbox:
                         yalign 0.5
-                        text "          S                                                 Take screenshot"
+                        xpos 20
+                        text "S" text_align 0.0 
+                    hbox:
+                        yalign 0.5
+                        xalign 1.0
+                        xoffset -20
+                        text "Take screenshot" text_align 1.0 
                 frame:
                     style_group "help"
 
                     hbox:
                         yalign 0.5
-                        text "Delete                                                 Deletes the selected save"
+                        xpos 20
+                        text "Delete" text_align 0.0
+                    hbox:
+                        yalign 0.5
+                        xalign 1.0
+                        xoffset -20
+                        text "Deletes the selected save" text_align 1.0
                 frame:
                     style_group "help"
 
                     hbox:
                         yalign 0.5
-                        text "          F                                                 Fullscreen/widescreen"
+                        xpos 20
+                        text "F" text_align 0.0
+                    hbox:
+                        yalign 0.5
+                        xalign 1.0
+                        xoffset -20
+                        text "Fullscreen/widescreen" text_align 1.0
                 frame:
                     style_group "help"
 
                     hbox:
                         yalign 0.5
-                        text "          A                                                 Auto-mode"
+                        xpos 20
+                        text "A" text_align 0.0
+                    hbox:
+                        yalign 0.5
+                        xalign 1.0
+                        xoffset -20
+                        text "Auto-mode" text_align 1.0
                 frame:
                     style_group "help"
 
                     hbox:
                         yalign 0.5
-                        text "Mouse wheel up                                  Rollback trough the game"
+                        xpos 20
+                        text "Mouse wheel up" text_align 0.0
+                    hbox:
+                        yalign 0.5
+                        xalign 1.0
+                        xoffset -20
+                        text "Rollback trough the game"  text_align 1.0
                 frame:
                     style_group "help"
 
                     hbox:
                         yalign 0.5
-                        text "Mouse wheel down                              Forwards trough the game"
+                        xpos 20
+                        text "Mouse wheel down" text_align 0.0
+                    hbox:
+                        yalign 0.5
+                        xalign 1.0
+                        xoffset -20
+                        text "Forwards trough the game" text_align 1.0
                 frame:
                     style_group "help"
 
                     hbox:
                         yalign 0.5
-                        text "          H                                                Hide the text window"
+                        xpos 20
+                        text "H" text_align 0.0
+                    hbox:
+                        yalign 0.5
+                        xalign 1.0
+                        xoffset -20
+                        text "Hide the text window" text_align 1.0
                 frame:
                     style_group "help"
 
                     hbox:
                         yalign 0.5
-                        text "Arrow keys                                            Select menu choices"
+                        xpos 20
+                        text "Arrow keys" text_align 0.0
+                    hbox:
+                        yalign 0.5
+                        xalign 1.0
+                        xoffset -20
+                        text "Select menu choices" text_align 1.0
                 frame:
                     style_group "help"
 
                     hbox:
                         yalign 0.5
-                        text "TAB                                                      Toggles skipping"
+                        xpos 20
+                        text "TAB" text_align 0.0
+                    hbox:
+                        yalign 0.5
+                        xalign 1.0
+                        xoffset -20
+                        text "Toggles skipping" text_align 1.0
                 frame:
                     style_group "help"
 
@@ -712,6 +788,7 @@ screen help ():
                         xpos 350
                         yalign 0.5
                         textbutton ("CREDITS") action ShowMenu("Credits")
+    
     vbar:
         value YScrollValue("help_vp")
         
