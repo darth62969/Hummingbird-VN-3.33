@@ -836,19 +836,38 @@ screen quick_menu():
         xalign 0
         yalign 1.0
         
-        imagebutton auto "gui/qm/prefs_%s.png" xpos 1675 ypos -128 focus_mask True action ShowMenu('preferences')
+        imagebutton auto "gui/qm/qload_%s.png" xpos 20 ypos -115 focus_mask True action QuickLoad()
+    
+    hbox:
+        xalign 0
+        yalign 1.0
+        
+        imagebutton auto "gui/qm/qsave_%s.png" xpos 20 ypos -50 focus_mask True action QuickSave()    
+    
+    hbox:
+        xalign 0
+        yalign 1.0
+        
+        imagebutton auto "gui/qm/prefs_%s.png" xpos 1675 ypos -115 focus_mask True action ShowMenu('preferences')
     hbox: 
         xalign 0
         yalign 1.0
 
-        imagebutton auto "gui/qm/save_%s.png" xpos 1805 ypos -198 focus_mask True action ShowMenu('save')
-        imagebutton auto "gui/qm/load_%s.png" xpos 1580 ypos -198 focus_mask True action ShowMenu('load')
+        imagebutton auto "gui/qm/save_%s.png" xpos 1805 ypos -180 focus_mask True action ShowMenu('save')
+        imagebutton auto "gui/qm/load_%s.png" xpos 1580 ypos -180 focus_mask True action ShowMenu('load')
     hbox:
         xalign 0
         yalign 1.0
 
-        imagebutton auto "gui/qm/quit_%s.png" xpos 1700 ypos -58 focus_mask True action Quit(confirm=True)
+        imagebutton auto "gui/qm/quit_%s.png" xpos 1700 ypos -50 focus_mask True action Quit(confirm=True)
 
+
+    hbox: 
+        xalign 0
+        yalign 1.0
+
+        imagebutton auto "gui/qm/auto_%s.png" xpos 20 ypos -180 focus_mask True action Preference("auto-forward", "toggle")
+        imagebutton auto "gui/qm/skip_%s.png" xpos 54 ypos -180 focus_mask True action Skip()
         
 
 init -2:
