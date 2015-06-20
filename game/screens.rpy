@@ -665,12 +665,12 @@ screen help ():
                     hbox:
                         yalign 0.5
                         xpos 20
-                        text "Left click,Enter, space" text_align 0.0
+                        text "Left click, Enter, Space" text_align 0.0
                     hbox:
                         yalign 0.5
                         xalign 1.0
                         xoffset -20
-                        text "Advance trough the game" text_align 1.0
+                        text "Advance text" text_align 1.0
         
 
                 frame:
@@ -696,7 +696,7 @@ screen help ():
                         yalign 0.5
                         xalign 1.0
                         xoffset -20
-                        text "Deletes the selected save" text_align 1.0
+                        text "Delete selected save" text_align 1.0
                 frame:
                     style_group "help"
 
@@ -708,7 +708,7 @@ screen help ():
                         yalign 0.5
                         xalign 1.0
                         xoffset -20
-                        text "Fullscreen/widescreen" text_align 1.0
+                        text "Fullscreen" text_align 1.0
                 frame:
                     style_group "help"
 
@@ -720,7 +720,7 @@ screen help ():
                         yalign 0.5
                         xalign 1.0
                         xoffset -20
-                        text "Auto-mode" text_align 1.0
+                        text "Auto advance" text_align 1.0
                 frame:
                     style_group "help"
 
@@ -732,7 +732,7 @@ screen help ():
                         yalign 0.5
                         xalign 1.0
                         xoffset -20
-                        text "Rollback trough the game"  text_align 1.0
+                        text "Rewind"  text_align 1.0
                 frame:
                     style_group "help"
 
@@ -744,7 +744,7 @@ screen help ():
                         yalign 0.5
                         xalign 1.0
                         xoffset -20
-                        text "Forwards trough the game" text_align 1.0
+                        text "Forward" text_align 1.0
                 frame:
                     style_group "help"
 
@@ -756,7 +756,7 @@ screen help ():
                         yalign 0.5
                         xalign 1.0
                         xoffset -20
-                        text "Hide the text window" text_align 1.0
+                        text "Hide text" text_align 1.0
                 frame:
                     style_group "help"
 
@@ -775,12 +775,12 @@ screen help ():
                     hbox:
                         yalign 0.5
                         xpos 20
-                        text "TAB" text_align 0.0
+                        text "Tab" text_align 0.0
                     hbox:
                         yalign 0.5
                         xalign 1.0
                         xoffset -20
-                        text "Toggles skipping" text_align 1.0
+                        text "Toggle skipping" text_align 1.0
                 frame:
                     style_group "help"
 
