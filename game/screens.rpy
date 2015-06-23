@@ -470,13 +470,16 @@ screen preferences():
                     hbox:
                         style_group "pref_left"
                         text "Auto-Forward Time"
+                    hbox:
+                        style_group "pref_right"
+                        xpos 475
+                        spacing 25
                         textbutton _("Wait for Voice"):
                             action Preference("wait for voice", "toggle")
-                            xpos 155
                         bar:
                             value Preference("auto-forward time") 
-                            xpos 475
-                            xsize 250
+                            xsize 225
+                            yalign 0.5
 
                 frame:
                     hbox:
