@@ -387,6 +387,7 @@ screen preferences():
         mousewheel True
         xalign 0
         yalign 0
+        child_size (1050, 6000)
         xsize 1050
         ysize 828
         xpos 125
@@ -481,14 +482,19 @@ screen preferences():
                     hbox:
                         style_group "pref_left"
                         text "Music Volume"
+                    hbox:
+                        style_group "pref_right"
+                        xpos 500
                         bar value Preference("music volume")
     
                 frame:
                     hbox:
                         style_group "pref_left"
                         text "Sound Volume"
+                    hbox:
+                        style_group "pref_right"
+                        xpos 500    
                         bar value Preference("sound volume")
-    
                         if config.sample_sound:
                             textbutton _("Test"):
                                 action Play("sound", config.sample_sound)
@@ -579,6 +585,13 @@ init -2:
         thumb_shadow Frame("gui/ui/ScrollBarInternal.png", 2, 2, 2, 2)
         xsize 470
 
+    style pref_hbox:
+        xfill True
+        
+        xsize 1030
+
+        yalign 0.5
+        
     style pref_vbox:
         xfill True
 
