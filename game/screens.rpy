@@ -594,8 +594,223 @@ init -2:
 #
 # Screen that allows the user to view the help menu and credits.
 # By, Brunn08
-        
+ 
 screen help ():
+    
+    tag menu
+    
+    add "gui/ui/MenuScreen.png" xalign 1.0 yalign 1.0
+    
+# Include the navigation.
+    use navigation
+
+# Window Title    
+    hbox:
+        xpos 100
+        ypos 10
+        
+        text "HELP" size 64 color "000000ff"
+# Help Window    
+    viewport id "help_vp":
+        draggable True
+        mousewheel True
+        child_size (1050, 6000)
+        xalign 0
+        yalign 0
+        xsize 1050
+        ysize 828
+        xpos 125
+        ypos 125
+        
+        
+        grid 1 1:
+            style_group "help"
+            xfill True
+
+
+            vbox:
+                spacing 20
+                frame:
+                    hbox:
+                        xpos 350
+                        yalign 0.5
+                        textbutton ("CHATACTERS") action ShowMenu("help_characters")
+                frame:
+                    hbox:
+                        xpos 350
+                        yalign 0.5
+                        textbutton ("CONTROLS") action ShowMenu("help_controls")
+                frame:
+                    hbox:
+                        xpos 350
+                        yalign 0.5
+                        textbutton ("WORLD") action ShowMenu("help_world")
+                frame:
+                    hbox:
+                        xpos 350
+                        yalign 0.5
+                        textbutton ("CREDITS") action ShowMenu("help_credits")
+    
+    vbar:
+        value YScrollValue("help_vp")
+        
+        left_bar Frame("gui/ui/ScrollBarExternal.png", 2, 2, 2, 2)
+        right_bar Frame("gui/ui/ScrollBarExternal.png", 2, 2, 2, 2)
+        
+        left_gutter 0
+        right_gutter 0
+        bottom_gutter 0
+        top_gutter 0
+        
+        thumb_offset 0
+        
+        thumb Frame("gui/ui/ScrollBarInternal.png", 2, 2, 2, 2)
+        thumb_shadow Frame("gui/ui/ScrollBarInternal.png", 2, 2, 2, 2)
+        
+        bar_resizing False
+        
+        xsize 10
+        ysize 878
+        xpos 101
+        ypos 100
+
+init -2:
+    style help_frame:
+
+        background Frame("gui/ui/FrameBox.png", 2, 2, 2, 2)
+        xfill True
+        ysize 100
+        xsize 1050
+
+    style help_left_hbox:
+        xalign 1.0
+        xoffset -20
+        yalign 0.5
+    style help_left_text:
+        color "000000ff"
+        text_align 1.0
+
+    style help_right_hbox:
+        xpos 20
+        yalign 0.5
+    style help_right_text:
+        color "000000ff"
+        text_align 0.0
+
+    style help_vbox:
+        xfill True
+
+    style help_lable:
+
+        yalign 0.5
+
+    style help_button:
+        xfill True
+        background Frame("gui/ui/FrameBox_hover.png", 4, 4, 4, 4)
+        idle_background Frame("gui/ui/FrameBox.png", 4, 4, 4, 4)
+        hover_background Frame("gui/ui/FrameBox_hover.png", 4, 4, 4, 4)
+        xalign 0
+
+        ysize 50
+        xsize 250
+        left_margin 25
+
+    style help_slider:
+        xmaximum 192
+        xalign 0
+
+    style soundtest_button:
+        xalign 1.0
+ 
+ 
+screen help_characters ():
+    
+    tag menu
+    
+    add "gui/ui/MenuScreen.png" xalign 1.0 yalign 1.0
+    
+# Include the navigation.
+    use navigation
+
+# Window Title    
+    hbox:
+        xpos 100
+        ypos 10
+        
+        text "HELP" size 64 color "000000ff"
+# Help Window    
+    viewport id "help_vp":
+        draggable True
+        mousewheel True
+        child_size (1050, 6000)
+        xalign 0
+        yalign 0
+        xsize 1050
+        ysize 828
+        xpos 125
+        ypos 125
+        
+        
+        grid 1 1:
+            style_group "help"
+            xfill True
+            
+            vbox:
+                spacing 20
+                
+                frame:
+                    hbox:
+                        xpos 350
+                        yalign 0.5
+                        textbutton ("BACK") action ShowMenu("help")
+
+init -2:
+    style help_frame:
+
+        background Frame("gui/ui/FrameBox.png", 2, 2, 2, 2)
+        xfill True
+        ysize 100
+        xsize 1050
+
+    style help_left_hbox:
+        xalign 1.0
+        xoffset -20
+        yalign 0.5
+    style help_left_text:
+        color "000000ff"
+        text_align 1.0
+
+    style help_right_hbox:
+        xpos 20
+        yalign 0.5
+    style help_right_text:
+        color "000000ff"
+        text_align 0.0
+
+    style help_vbox:
+        xfill True
+
+    style help_lable:
+
+        yalign 0.5
+
+    style help_button:
+        xfill True
+        background Frame("gui/ui/FrameBox_hover.png", 4, 4, 4, 4)
+        idle_background Frame("gui/ui/FrameBox.png", 4, 4, 4, 4)
+        hover_background Frame("gui/ui/FrameBox_hover.png", 4, 4, 4, 4)
+        xalign 0
+
+        ysize 50
+        xsize 250
+        left_margin 25
+
+    style help_slider:
+        xmaximum 192
+        xalign 0
+
+
+screen help_controls ():
     
     tag menu
     
@@ -705,7 +920,8 @@ screen help ():
                 frame:
                     hbox:
                         xpos 350
-                        textbutton ("CREDITS") action ShowMenu("Credits")
+                        yalign 0.5
+                        textbutton ("BACK") action ShowMenu("help")
     
     vbar:
         value YScrollValue("help_vp")
@@ -776,9 +992,386 @@ init -2:
         xmaximum 192
         xalign 0
 
-    style soundtest_button:
-        xalign 1.0
+screen help_world ():
+    
+    tag menu
+    
+    add "gui/ui/MenuScreen.png" xalign 1.0 yalign 1.0
+    
+# Include the navigation.
+    use navigation
+
+# Window Title    
+    hbox:
+        xpos 100
+        ypos 10
         
+        text "HELP" size 64 color "000000ff"
+# Help Window    
+    viewport id "help_vp":
+        draggable True
+        mousewheel True
+        child_size (1050, 6000)
+        xalign 0
+        yalign 0
+        xsize 1050
+        ysize 828
+        xpos 125
+        ypos 125
+        
+        
+        grid 1 1:
+            style_group "help"
+            xfill True
+ 
+            vbox:
+                spacing 20
+                
+                frame:
+                    hbox:
+                        xpos 350
+                        yalign 0.5
+                        textbutton ("BACK") action ShowMenu("help")
+
+
+init -2:
+    style help_frame:
+
+        background Frame("gui/ui/FrameBox.png", 2, 2, 2, 2)
+        xfill True
+        ysize 100
+        xsize 1050
+
+    style help_left_hbox:
+        xalign 1.0
+        xoffset -20
+        yalign 0.5
+    style help_left_text:
+        color "000000ff"
+        text_align 1.0
+
+    style help_right_hbox:
+        xpos 20
+        yalign 0.5
+    style help_right_text:
+        color "000000ff"
+        text_align 0.0
+
+    style help_vbox:
+        xfill True
+
+    style help_lable:
+
+        yalign 0.5
+
+    style help_button:
+        xfill True
+        background Frame("gui/ui/FrameBox_hover.png", 4, 4, 4, 4)
+        idle_background Frame("gui/ui/FrameBox.png", 4, 4, 4, 4)
+        hover_background Frame("gui/ui/FrameBox_hover.png", 4, 4, 4, 4)
+        xalign 0
+
+        ysize 50
+        xsize 250
+        left_margin 25
+
+screen help_credits ():
+    
+    tag menu
+    
+    add "gui/ui/MenuScreen.png" xalign 1.0 yalign 1.0
+    
+# Include the navigation.
+    use navigation
+
+# Window Title    
+    hbox:
+        xpos 100
+        ypos 10
+        
+        text "HELP" size 64 color "000000ff"
+# Help Window    
+    viewport id "help_vp":
+        draggable True
+        mousewheel True
+        child_size (1050, 6000)
+        xalign 0
+        yalign 0
+        xsize 1050
+        ysize 828
+        xpos 125
+        ypos 125
+        
+        
+        grid 1 1:
+            style_group "help_credits"
+            xfill True
+ 
+            vbox:
+                spacing 20
+                
+                frame:
+                    hbox:
+                        style "help_credits_hbox"
+                        
+                        hbox:
+                            style_group "help_credits_right"
+                            text "Project Lead"
+                        hbox:
+                            style_group "help_credits_left"
+                            text "Rioku"
+                     
+                frame:
+                    hbox:
+                        style "help_credits_hbox"
+                        
+                        hbox:
+                            style_group "help_credits_right"
+                            text "Story Lead"
+                        hbox:
+                            style_group "help_credits_left"
+                            text "Rioku"
+                
+                frame:
+                    hbox:
+                        style "help_credits_hbox"
+                
+                        hbox:
+                            style_group "help_credits_right"
+                            text "Writers:"
+                            
+                        vbox:
+                            style_group "help_credits_left"
+                       
+                            text "Rioku"
+                            text "Vladimito"
+                            text "Amy2"
+                            text "Mafuyu"
+                            text "ChaosBeing"
+                frame:
+                    hbox:
+                        style "help_credits_hbox"
+                
+                        hbox:
+                            style_group "help_credits_right"
+                            text "Story Development:"
+                            
+                        vbox:
+                            style_group "help_credits_left"
+                       
+                            text "Rioku"
+                            text "Vladimito"
+                            text "Amy2"
+                            text "Mafuyu"
+                            text "ChaosBeing"
+                            text "The Wired"
+                            text "AngelTheGabriel"
+
+                frame:
+                    hbox:
+                        style "help_credits_hbox"
+                        
+                        hbox:
+                            style_group "help_credits_right"
+                            text "Programming Lead"
+                        hbox:
+                            style_group "help_credits_left"
+                            text "TheWired"
+
+                frame:
+                    hbox:
+                        style "help_credits_hbox"
+                
+                        hbox:
+                            style_group "help_credits_right"
+                            text "Programmers:"
+                            
+                        vbox:
+                            style_group "help_credits_left"
+                       
+                            text "TheWired"
+                            text "Xumbra"
+                            text "Brunn08"
+                            text "Rioku"
+                            
+                frame:
+                    hbox:
+                        style "help_credits_hbox"
+                        
+                        hbox:
+                            style_group "help_credits_right"
+                            text "Design Lead - UI"
+                        hbox:
+                            style_group "help_credits_left"
+                            text "TheWired"
+                
+                frame:
+                    hbox:
+                        style "help_credits_hbox"
+                
+                        hbox:
+                            style_group "help_credits_right"
+                            text "Design - UI:"
+                            
+                        vbox:
+                            style_group "help_credits_left"
+                       
+                            text "TheWired"
+                            text "Brunn08"
+                            
+                frame:
+                    hbox:
+                        style "help_credits_hbox"
+                
+                        hbox:
+                            style_group "help_credits_right"
+                            text "Editors, SpellCheckers:"
+                            
+                        vbox:
+                            style_group "help_credits_left"
+                       
+                            text "AngelTheGabriel"
+                            text "Amy2"
+                            
+                frame:
+                    hbox:
+                        style "help_credits_hbox"
+                        
+                        hbox:
+                            style_group "help_credits_right"
+                            text "Character Design"
+                        hbox:
+                            style_group "help_credits_left"
+                            text "Rioku's Sister"
+
+                frame:
+                    hbox:
+                        style "help_credits_hbox"
+                        
+                        hbox:
+                            style_group "help_credits_right"
+                            text "Peacekeeper"
+                        hbox:
+                            style_group "help_credits_left"
+                            text "Rioku"
+                 
+                frame:
+                    hbox:
+                        style "help_credits_hbox"
+                        
+                        hbox:
+                            style_group "help_credits_right"
+                            text "Pain in the Ass Stubborn Rock"
+                        hbox:
+                            style_group "help_credits_left"
+                            text "TheWired"
+                            
+                frame:
+                    hbox:
+                        style "help_credits_hbox"
+                        
+                        hbox:
+                            style_group "help_credits_right"
+                            text "Code Cleaner, Guide Book"
+                        hbox:
+                            style_group "help_credits_left"
+                            text "Xumbra"
+
+                frame:
+                    hbox:
+                        xpos 350
+                        yalign 0.5
+                        textbutton ("BACK") action ShowMenu("help")
+
+    vbar:
+        value YScrollValue("help_vp")
+        
+        left_bar Frame("gui/ui/ScrollBarExternal.png", 2, 2, 2, 2)
+        right_bar Frame("gui/ui/ScrollBarExternal.png", 2, 2, 2, 2)
+        
+        left_gutter 0
+        right_gutter 0
+        bottom_gutter 0
+        top_gutter 0
+        
+        thumb_offset 0
+        
+        thumb Frame("gui/ui/ScrollBarInternal.png", 2, 2, 2, 2)
+        thumb_shadow Frame("gui/ui/ScrollBarInternal.png", 2, 2, 2, 2)
+        
+        bar_resizing False
+        
+        xsize 10
+        ysize 878
+        xpos 101
+        ypos 100
+
+init -2:
+    style help_credits_frame:
+
+        background Frame("gui/ui/FrameBox.png", 2, 2, 2, 2)
+        xfill True
+        
+        xsize 1050
+
+        yminimum 100
+        ymaximum 500
+        
+        ypadding 30
+        
+    style help_credits_fixed:
+        xfill True
+    
+        xsize 1050
+           
+        fit_first True
+ 
+    style help_credits_left_hbox:
+        xalign 1.0
+        xoffset -20
+
+    style help_credits_left_vbox:
+        xalign 1.0
+        xoffset -20
+        yalign 0.5
+
+    style help_credits_left_text:
+        color "000000ff"
+        text_align 1.0
+
+    style help_credits_right_hbox:
+        xpos 20
+
+    style help_credits_right_text:
+        color "000000ff"
+        text_align 0.0
+
+    style help_credits_vbox:
+        xfill True
+        
+    style help_credits_hbox:
+        xfill True
+        
+        xsize 1030
+
+        yalign 0.5
+        
+    style help__credits_lable:
+        yalign 0.5
+
+    style help_credits_button:
+        xfill True
+        background Frame("gui/ui/FrameBox_hover.png", 4, 4, 4, 4)
+        idle_background Frame("gui/ui/FrameBox.png", 4, 4, 4, 4)
+        hover_background Frame("gui/ui/FrameBox_hover.png", 4, 4, 4, 4)
+        xalign 0
+
+        ysize 50
+        xsize 250
+        left_margin 25
+
+
+ 
 ##############################################################################
 # Yes/No Prompt
 #
