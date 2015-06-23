@@ -235,7 +235,7 @@ init -1 python hide:
     config.end_game_transition = dissolve
 
     ## Used when a game is loaded.
-    config.after_load_transition = None
+    config.after_load_transition = dissolve
 
     ## Used when the window is shown.
     config.window_show_transition = None
@@ -250,10 +250,10 @@ init -1 python hide:
     config.nvl_adv_transition = dissolve
 
     ## Used when yesno is shown.
-    config.enter_yesno_transition = None
+    config.enter_yesno_transition = dissolve
 
     ## Used when the yesno is hidden.
-    config.exit_yesno_transition = None
+    config.exit_yesno_transition = dissolve
 
     ## Used when entering a replay
     config.enter_replay_transition = None
