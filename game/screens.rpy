@@ -358,7 +358,20 @@ init -2:
     style file_picker_button is large_button
     style file_picker_text is large_button_text
 
+##############################################################################
+# In Game Menus
+#
+# This screens sets the Menu layout for Help and Preferences.
+# By: Jonathan Oakes (Darth62969, TheWired)
 
+screen InGameMenu ():
+
+#Use the Menu Screen background
+    add "gui/ui/MenuScreen.png" xalign 1.0 yalign 1.0
+    
+# Include the navigation.
+    use navigation  
+ 
 ##############################################################################
 # Preferences
 #
@@ -368,11 +381,9 @@ init -2:
 screen preferences():
 
     tag menu
-
-    add "gui/ui/MenuScreen.png" xalign 1.0 yalign 1.0
     
-# Include the navigation.
-    use navigation
+# Include the InGameMenu
+    use InGameMenu
 
 # Window Title    
     hbox:
@@ -609,16 +620,16 @@ init -2:
 # Help
 #
 # Screen that allows the user to view the help menu and credits.
-# By, Brunn08
+# By: Jonathan Oakes (Darth62969, TheWired)
+
  
 screen help ():
     
     tag menu
     
-    add "gui/ui/MenuScreen.png" xalign 1.0 yalign 1.0
-    
-# Include the navigation.
-    use navigation
+# Include the InGameMenu
+    use InGameMenu
+
 
 # Window Title    
     hbox:
@@ -737,16 +748,20 @@ init -2:
 
     style soundtest_button:
         xalign 1.0
- 
+        
+#################################################
+# Characters Info
+#
+# This is the Help Screen For info on Characters
+# Coded By: Jonathan Oakes (Darth62969, TheWired)
+# Character Descriptions By: 
  
 screen help_characters ():
     
     tag menu
     
-    add "gui/ui/MenuScreen.png" xalign 1.0 yalign 1.0
-    
-# Include the navigation.
-    use navigation
+# Include the InGameMenu
+    use InGameMenu
 
 # Window Title    
     hbox:
@@ -825,15 +840,18 @@ init -2:
         xmaximum 192
         xalign 0
 
+###################################################################
+# Help Controls
+#
+# This is the Help Menu for the Controls
+# By: Brunn08, Jonathan Oakes (Darth62969, TheWired)
 
 screen help_controls ():
     
     tag menu
     
-    add "gui/ui/MenuScreen.png" xalign 1.0 yalign 1.0
-    
-# Include the navigation.
-    use navigation
+# Include the InGameMenu
+    use InGameMenu
 
 # Window Title    
     hbox:
@@ -1008,14 +1026,16 @@ init -2:
         xmaximum 192
         xalign 0
 
+########################################################################
+# The World screen for the Help Menu
+# By: Jonathan Oakes (Darth62969, TheWired)
+  
 screen help_world ():
     
     tag menu
     
-    add "gui/ui/MenuScreen.png" xalign 1.0 yalign 1.0
-    
-# Include the navigation.
-    use navigation
+# Include the InGameMenu
+    use InGameMenu
 
 # Window Title    
     hbox:
@@ -1091,14 +1111,18 @@ init -2:
         xsize 250
         left_margin 25
 
+######################################################################
+# Credits For Help Menu
+#
+# These are the Credits for the Help Menu
+# By: Jonathan Oakes (Darth62969, TheWired)
+
 screen help_credits ():
     
     tag menu
     
-    add "gui/ui/MenuScreen.png" xalign 1.0 yalign 1.0
-    
-# Include the navigation.
-    use navigation
+# Include the InGameMenu
+    use InGameMenu
 
 # Window Title    
     hbox:
@@ -1160,10 +1184,11 @@ screen help_credits ():
                             style_group "help_credits_left"
                        
                             text "Rioku"
-                            text "Vladimito"
-                            text "Amy2"
-                            text "Mafuyu"
-                            text "ChaosBeing"
+                            text "Vladimito" #ai atsuko common route
+                            text "Amy2" #ai
+                            text "Mafuyu" #mana
+                            text "ChaosBeing" #Hirohito, Takashi
+                             
                 frame:
                     hbox:
                         style "help_credits_hbox"
@@ -1295,6 +1320,50 @@ screen help_credits ():
 
                 frame:
                     hbox:
+                        style "help_credits_hbox"
+                        
+                        hbox:
+                            style_group "help_credits_right"
+                            text "Loves Grills as Well as the Kawaiiest Grill of All, Rioku"
+                        hbox:
+                            style_group "help_credits_left"
+                            text "Vladimito"
+                    
+                frame:
+                    hbox:
+                        style "help_credits_hbox"
+                        
+                        hbox:
+                            style_group "help_credits_right"
+                            text "Weaboo Beauty"
+                        hbox:
+                            style_group "help_credits_left"
+                            text "Amy2"
+    
+                frame:
+                    hbox:
+                        style "help_credits_hbox"
+                        
+                        hbox:
+                            style_group "help_credits_right"
+                            text "Main Character in Training"
+                        hbox:
+                            style_group "help_credits_left"
+                            text "AngelTheGabriel"
+    
+                frame:
+                    hbox:
+                        style "help_credits_hbox"
+                        
+                        hbox:
+                            style_group "help_credits_right"
+                            text "The One That Can't make Puns"
+                        hbox:
+                            style_group "help_credits_left"
+                            text "Mafuyu"
+    
+                frame:
+                    hbox:
                         xpos 350
                         yalign 0.5
                         textbutton ("BACK") action ShowMenu("help")
@@ -1354,6 +1423,8 @@ init -2:
     style help_credits_left_text:
         color "000000ff"
         text_align 1.0
+        xanchor 1.0
+        xalign 1.0
 
     style help_credits_right_hbox:
         xpos 20
@@ -1361,6 +1432,7 @@ init -2:
     style help_credits_right_text:
         color "000000ff"
         text_align 0.0
+        xmaximum 0.5
 
     style help_credits_vbox:
         xfill True

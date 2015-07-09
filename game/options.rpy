@@ -285,7 +285,7 @@ init -1 python hide:
 
     ## The default text speed in characters per second. 0 is infinite.
 
-    config.default_text_cps = 0
+    config.default_text_cps = 50
 
     ## The default auto-forward time setting.
 
