@@ -748,16 +748,17 @@ init -2:
 
     style soundtest_button:
         xalign 1.0
-        
+
+
 #################################################
-# Characters Info
+# Character Info -- Hirohito
 #
 # This is the Help Screen For info on Characters
 # Coded By: Jonathan Oakes (Darth62969, TheWired)
 # Character Descriptions By: 
- 
-screen help_characters ():
-    
+
+screen help_Hirohito():
+  
     tag menu
     
 # Include the InGameMenu
@@ -768,7 +769,7 @@ screen help_characters ():
         xpos 100
         ypos 10
         
-        text "HELP" size 64 color "000000ff"
+        text "HIROHITO" size 64 color "000000ff"
 # Help Window    
     viewport id "help_vp":
         draggable True
@@ -789,6 +790,163 @@ screen help_characters ():
             vbox:
                 spacing 20
                 
+                frame:
+                    hbox:
+                        xpos 350
+                        yalign 0.5
+                        textbutton ("BACK") action ShowMenu("help_characters")
+
+#################################################
+# Character Info -- Ai
+# This is the Help Screen For info on Characters
+# Coded By: Jonathan Oakes (Darth62969, TheWired)
+# Character Descriptions By: 
+
+screen help_Ai():
+  
+    tag menu
+    
+# Include the InGameMenu
+    use InGameMenu
+
+# Window Title    
+    hbox:
+        xpos 100
+        ypos 10
+        
+        text "AI KOIZUMI" size 64 color "000000ff"
+# Help Window    
+    viewport id "help_vp":
+        draggable True
+        mousewheel True
+        child_size (1050, 6000)
+        xalign 0
+        yalign 0
+        xsize 1050
+        ysize 828
+        xpos 125
+        ypos 125
+        
+        
+        grid 1 1:
+            style_group "help"
+            xfill True
+            
+            vbox:
+                spacing 20
+                
+                frame:
+                    vbox:
+                        spacing 10
+                        text "Her name means Love Little Spring Ai Koizumi"
+                        text "“Quit messing around! I wanna get in there and pummel those guys now. Ryou your position as leader has been cut. Everyone listen to me! We’re marching straight in there and whooping the living daylights out of those geeks. What do you mean ‘relax’? You haven’t done anything and I’m getting bored. It’s just a video game. Think? Geez you take this way too seriously. Get out there and take life by the reigns and bend it to your will. That way everything’s more interesting!”"
+                        text "Positives\n       Confident, \n       Outgoing, \n    \"I-don’t-need-your-help-but-you-can-tag-along-if-you-want\" type.\n        Doesn't have a real problem with the healthcare AIs the same way Hirohito does, but hers annoys her sometimes.\n        Plays the game casually, sometimes freaked out/horrified/disgusted at how seriously Hirohito takes the game." 
+                        text "Negatives \n     Charges in without plans.\n     Never really thinks about people other than herself unless it is pointed out to her.\n      Prideful and loud to the point it is off putting.\n     Staggering lack of commitment to everything. \n     Starts things but never sticks with it to the end.\n        Her talking gets people in trouble.\n"
+                        text "Neutral\n     Only meets Hirohito in VRMMO\nFoil to the protagonist.\n        Attracts Hirohito's attention because of her quite vocally complaining about how her health care EG won't stop bugging her even though she's in shape and pretty happy with her life.\n     Does the ‘talking’ in the party. \n     Charismatic.\nA highly aggressive bard in game."
+                
+                frame:
+                    hbox:
+                        xpos 350
+                        yalign 0.5
+                        textbutton ("BACK") action ShowMenu("help_characters")
+                        
+#################################################
+# Character Info -- Hirohito
+#
+# This is the Help Screen For info on Characters
+# Coded By: Jonathan Oakes (Darth62969, TheWired)
+# Character Descriptions By: 
+
+screen help_Hirohito():
+  
+    tag menu
+    
+# Include the InGameMenu
+    use InGameMenu
+
+# Window Title    
+    hbox:
+        xpos 100
+        ypos 10
+        
+        text "HIROHITO" size 64 color "000000ff"
+# Help Window    
+    viewport id "help_vp":
+        draggable True
+        mousewheel True
+        child_size (1050, 6000)
+        xalign 0
+        yalign 0
+        xsize 1050
+        ysize 828
+        xpos 125
+        ypos 125
+        
+        
+        grid 1 1:
+            style_group "help"
+            xfill True
+            
+            vbox:
+                spacing 20
+                
+                frame:
+                    hbox:
+                        xpos 350
+                        yalign 0.5
+                        textbutton ("BACK") action ShowMenu("help_characters")
+        
+#################################################
+# Characters Menu
+#
+# This is the Help Screen For info on Characters
+# Coded By: Jonathan Oakes (Darth62969, TheWired)
+# Character Descriptions By: 
+ 
+screen help_characters ():
+    
+    tag menu
+    
+# Include the InGameMenu
+    use InGameMenu
+
+# Window Title    
+    hbox:
+        xpos 100
+        ypos 10
+        
+        text "CHATACTERS" size 64 color "000000ff"
+# Help Window    
+    viewport id "help_vp":
+        draggable True
+        mousewheel True
+        child_size (1050, 6000)
+        xalign 0
+        yalign 0
+        xsize 1050
+        ysize 828
+        xpos 125
+        ypos 125
+        
+        
+        grid 1 1:
+            style_group "help"
+            xfill True
+            
+            vbox:
+                spacing 20
+                
+                frame:
+                    hbox:
+                        xpos 350
+                        yalign 0.5
+                        textbutton ("Ai Koizumi") action ShowMenu("help_Ai")
+                
+                frame:
+                    hbox:
+                        xpos 350
+                        yalign 0.5
+                        textbutton ("Hirohito") action ShowMenu("help_Hirohito")
                 frame:
                     hbox:
                         xpos 350

@@ -27,7 +27,7 @@ image field_dawn = im.FactorScale("backgrounds/FillerBackground.jpg", 1.5)
 image field_day = im.FactorScale("backgrounds/FillerBackground.jpg", 1.5)
 image field_dusk = im.FactorScale("backgrounds/FillerBackground.jpg", 1.5)
 image field_night = im.FactorScale("backgrounds/FillerBackground.jpg", 1.5)
-image room_night = im.FactorScale("backgrounds/FillerBackground.jpg", 1.5)
+image room_night = im.FactorScale("backgrounds/HirotitosroomFinalDraft.png", 1)
 image dark = "backgrounds/Dark.png"
 
 
