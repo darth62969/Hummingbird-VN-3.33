@@ -73,8 +73,10 @@ screen choice(items):
 
         vbox:
             style "menu"
-            spacing 2
-
+            spacing 5
+            yalign 0
+            
+            
             for caption, action, chosen in items:
 
                 if action:
@@ -90,16 +92,30 @@ screen choice(items):
 
 init -2:
     $ config.narrator_menu = True
-
-    style menu_window is default
+    
+    style menu_window is default:
+        background Frame("gui/ui/FrameBox.png", 2, 2, 2, 2)
+        xminimum int(config.screen_width * 0.80)
+        xmaximum int(config.screen_width * 0.80)
+        ymaximum int(config.screen_height * 0.75)
+        xpadding 30
+        ypadding 30
+        xfill True
 
     style menu_choice is button_text:
         clear
 
     style menu_choice_button is button:
-        xminimum int(config.screen_width * 0.75)
-        xmaximum int(config.screen_width * 0.75)
+        background Frame("gui/ui/FrameBox_hover.png", 4, 4, 4, 4)
+        hover_background Frame("gui/ui/FrameBox_hover.png", 4, 4, 4, 4)
+        idle_background Frame("gui/ui/FrameBox.png", 4, 4, 4, 4)
+        xfill True
+        xpadding 10
+        ypadding 10
+        xalign 0.5
+        yalign 0.0
 
+       
 
 ##############################################################################
 # Input
@@ -857,7 +873,7 @@ screen help_Ai():
 # Coded By: Jonathan Oakes (Darth62969, TheWired)
 # Character Descriptions By: 
 
-screen help_Hirohito():
+screen create_help_screen(character_full_name, description):
   
     tag menu
     
@@ -869,7 +885,7 @@ screen help_Hirohito():
         xpos 100
         ypos 10
         
-        text "HIROHITO" size 64 color "000000ff"
+        text character_full_name size 64 color "000000ff"
 # Help Window    
     viewport id "help_vp":
         draggable True
@@ -889,7 +905,9 @@ screen help_Hirohito():
             
             vbox:
                 spacing 20
-                
+                frame:
+                    hbox:
+                        text description
                 frame:
                     hbox:
                         xpos 350
@@ -906,7 +924,11 @@ screen help_Hirohito():
 screen help_characters ():
     
     tag menu
-    
+    $help_description = {
+        "Ai Koizumi": "Her name means Love Little Spring Ai Koizumi", 
+        "Hirohito McLastname": "whatever Hirohito's description is"
+        }
+  
 # Include the InGameMenu
     use InGameMenu
 
@@ -940,18 +962,18 @@ screen help_characters ():
                     hbox:
                         xpos 350
                         yalign 0.5
-                        textbutton ("Ai Koizumi") action ShowMenu("help_Ai")
-                
+                        textbutton ("Ai Koizumi") action ShowMenu("create_help_screen", "Ai Koizumi", help_description["Ai Koizumi"])
                 frame:
                     hbox:
                         xpos 350
                         yalign 0.5
-                        textbutton ("Hirohito") action ShowMenu("help_Hirohito")
+                        textbutton ("Hirohito") action ShowMenu("create_help_screen", "Hirohito McLastname", help_description["Hirohito McLastname"])
                 frame:
                     hbox:
                         xpos 350
                         yalign 0.5
                         textbutton ("BACK") action ShowMenu("help")
+
 
 init -2:
     style help_frame:
@@ -1725,4 +1747,11 @@ init -2:
         selected_idle_color "#cc08"
         selected_hover_color "#cc0"
         insensitive_color "#4448"
+        
+        
+        
+############################################
+
+
+
 

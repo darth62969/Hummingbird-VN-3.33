@@ -181,7 +181,81 @@ label start:
     h "{i}What kind of jerk hangs up like that?{/i}"
     
     "I was too tired to think much about it, and I fell asleep with my cellphone still in my hand."
+    menu:
+        "Go away.":
+
+            jump op1
+
+        "Sure.":
+            
+            jump op2
+
+        "I’ll do it myself.":
+            
+            jump op3
+
+label op1:
+
+    m "As you command."
+
+    "The figure hesitated for a moment before vanishing again."
+
+    "The form vanished as quickly as it appeared, but from the eyes of the mirror, nothing changed."
+
+    "No matter how many times I see it, her lack of a reflection in the mirror is still disturbing."
+
+    "I sighed and quickly finished preparing myself for the day."
+
+    "There wasn’t enough time for me to prepare any real food so I quickly grabbed some stuff I could eat on the run and made off with my makeshift meal."
+    
+label op2:
+
+    m "Your meal will be ready shortly."
+
+    m "Do you need anything else?"
+
+    h "No."
+
+    m "Very well."
+
+    "That feminine form continued to stand behind me without any reflection."
+
+    "I sighed and quickly finished preparing myself for the day."
+
+    "Hot food was awaiting me when I entered my kitchen."
+
+    "The mostly expressionless face of the transparent girl seemed somewhat satisfied with her work."
+
+    "I’m not sure how she could take satisfaction in this meal. She didn’t make it."
+
+    "This meal was prepared by machines in the kitchen not her, so why did she care?"
+
+    "As I thought this, I wasted more time eating than I should have."
+
+    m "Hirohito it is time to depart."
+
+    h "Alright. I got it."
+
+    "Feeling too lazy to try and finish quickly I left what food remained on the plate and left for school."
     
     
+label op3:
+    m "I understand."
+
+    "That feminine form continued to stand behind me without any reflection."
     
+    "If I turned I saw an emotionless face with an strange transparency."
+
+    "It was almost eerie how she could stand without a reflection. This fake girl behind me."
+
+    "It’s like a vampire. Vampires don’t have reflections."
+
+    "Or would it be a ghost? I wouldn’t imagine ghosts have reflections, and she’s transparent like a ghost."
+
+    "Strange how something with so many similarities to things labeled as ‘creepy’ is so socially acceptable now."
+
+    "As I thought this I made my way through the morning on autopilot."
+
+    "A simple meal was all I really needed to start my day and so I left my barren home for yet another run of the daily grind."
+
     return
