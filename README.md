@@ -25,6 +25,9 @@ https://docs.google.com/document/d/1O_Q1eePSmFz7SYh-pc13ttlYU4da2go3wJB4eYHx8fY/
 
 https://docs.google.com/document/d/1jaOvkHxVA2GCRA3cViOOjsakmwnTFVTaSgnlKtOklsk/edit
 
+### The script:
+https://docs.google.com/document/d/1pK7D8sBWB1SVqt1tShDo0GMEZxX9QVEA06pjn9LJTiY/edit
+
 ## Building:
 
 After you've checked out this repository, please do the following:
