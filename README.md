@@ -1,4 +1,7 @@
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/darth62969/Hummingbird-VN-3.33?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+
+[Join the Chat on Discourse](https://discordapp.com/channels/101528718366736384/101528718366736384)
+
 # Hummingbird-VN-3.33
 
 Community VN for the site Hummingbird.me
