@@ -93,8 +93,19 @@ init -1 python hide:
     ## The background of the window. In a Frame, the two numbers
     ## are the size of the left/right and top/bottom borders,
     ## respectively.
-
-    style.window.background = Frame("gui/ui/UI.png", 0, 0, 0, 0, Tile=True)
+    
+    blackcolor = "#ff0"
+    whitecolor = "#0ff"
+    
+    style.window.background = LiveComposite(
+        (1920, 256),
+        (0,0), Frame(
+            im.MatrixColor(
+                "gui/ui/FrameBox.png",
+                im.matrix.opacity(.5) * im.matrix.colorize(blackcolor, whitecolor))
+                ,2,2,2,2,
+                Tile=True)
+        )
     style.say_who_window.background = Frame("gui/ui/namebox.png", 0, 0, 0, 0, Tile=True)
 
     ## Margin is space surrounding the window, where the background
@@ -162,6 +173,17 @@ init -1 python hide:
     ## buttons have their own styles.
 
 
+    ########################################
+    ## these setting are for the save load screen
+    
+    ## number quicksave slots
+    config.quicksave_slots = 12
+    
+    ## number colums
+    ## config.file_page_cols = 2
+    
+    
+    
     #########################################
     ## These settings let you change some of the sounds that are used by
     ## Ren'Py.

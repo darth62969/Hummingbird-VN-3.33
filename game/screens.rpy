@@ -18,7 +18,7 @@ screen say(who, what, side_image=None, two_window=False):
         # The one window variant.
         window:
             id "window"
-
+            
             has vbox:
                 style "say_vbox"
 
@@ -1692,8 +1692,11 @@ init -2:
 #
 # A screen that's included by the default say screen, and adds quick access to
 # several useful functions.
-screen quick_menu():
 
+screen quick_menu():
+    
+    $blackcolor = "#ff0"
+    $whitecolor = "#0ff"
     # Add an in-game quick menu.
     hbox:
         xalign 0
@@ -1711,18 +1714,74 @@ screen quick_menu():
         xalign 0
         yalign 1.0
         
-        imagebutton auto "gui/qm/prefs_%s.png" xpos 1675 ypos -115 focus_mask True action ShowMenu('preferences')
+    #    imagebutton auto "gui/qm/prefs_%s.png" xpos 1675 ypos -115 focus_mask True action ShowMenu('preferences')
     hbox: 
         xalign 0
         yalign 1.0
 
-        imagebutton auto "gui/qm/save_%s.png" xpos 1805 ypos -180 focus_mask True action ShowMenu('save')
-        imagebutton auto "gui/qm/load_%s.png" xpos 1580 ypos -180 focus_mask True action ShowMenu('load')
+        imagebutton:
+            idle LiveComposite(
+                (64,64),
+                (0,0), Frame(
+                    im.MatrixColor("gui/ui/FrameBox_idle.png",im.matrix.opacity(.75)* im.matrix.colorize(blackcolor, whitecolor)), 
+                    2,2,2,2, 
+                    Tile=True),
+                (0,0), im.MatrixColor("gui/qm/save_idle.png", im.matrix.opacity(.75)))
+            hover LiveComposite(
+                (64,64),
+                (0,0), Frame(
+                    im.MatrixColor(
+                        "gui/ui/FrameBox_hover.png", 
+                        im.matrix.opacity(.75) * im.matrix.colorize(blackcolor, whitecolor)), 
+                    2, 2, 2, 2, 
+                    Tile=True), 
+                (0,0), im.MatrixColor("gui/qm/save_hover.png", im.matrix.opacity(.75)* im.matrix.colorize(blackcolor, whitecolor)))
+            focus_mask True 
+            xpos 1835            
+            ypos -130 
+            action ShowMenu('save')
+        imagebutton:
+            idle LiveComposite(
+                (64,64),
+                (0,0), Frame(
+                    im.MatrixColor(
+                        "gui/ui/FrameBox_idle.png",
+                        im.matrix.opacity(.75) * im.matrix.colorize(blackcolor, whitecolor)),
+                    2,2,2,2, 
+                    Tile=True),
+                (0,0), im.MatrixColor("gui/qm/load_idle.png", im.matrix.opacity(.75)))
+            hover LiveComposite(
+                (64,64),
+                (0,0), Frame(
+                    im.MatrixColor(
+                        "gui/ui/FrameBox_hover.png",
+                        im.matrix.opacity(.75) * im.matrix.colorize(blackcolor, whitecolor)),
+                    2, 2, 2, 2, 
+                    Tile=True), 
+                    (0,0), im.MatrixColor("gui/qm/load_hover.png", im.matrix.opacity(.75) * im.matrix.colorize(blackcolor, whitecolor)))
+            xpos 1700
+            ypos -130
+            focus_mask True
+            action ShowMenu('load')
     hbox:
         xalign 0
         yalign 1.0
 
-        imagebutton auto "gui/qm/quit_%s.png" xpos 1700 ypos -50 focus_mask True action Quit(confirm=True)
+        imagebutton:
+            idle LiveComposite((64,64),(0,0), Frame("gui/ui/FrameBox_idle.png", 2,2,2,2, Tile=True),(0,0), "gui/qm/quit_idle.png")
+            hover LiveComposite((64,64),(0,0), Frame("gui/ui/FrameBox_hover.png", 2, 2, 2, 2, Tile=True), (0,0), "gui/qm/quit_hover.png")  
+            xpos 1835 
+            ypos -60 
+            focus_mask True 
+            action Quit(confirm=True)
+            
+        imagebutton:
+            idle LiveComposite((64,64),(0,0), Frame("gui/ui/FrameBox_idle.png", 2,2,2,2, Tile=True),(0,0), "gui/qm/prefs_idle.png")
+            hover LiveComposite((64,64),(0,0), Frame("gui/ui/FrameBox_hover.png", 2, 2, 2, 2, Tile=True), (0,0), "gui/qm/prefs_hover.png")  
+            xpos 1700 
+            ypos -60 
+            focus_mask True 
+            action ShowMenu('preferences')
 
 
     hbox: 
